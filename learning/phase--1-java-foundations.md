@@ -1,4 +1,4 @@
-# Phase -1 — Java, Actually Written
+# Phase −1 — Java, Actually Written
 
 **10 weeks · ~120 hrs** · The phase that was missing. Added 2026-10-02 after the baseline
 diagnostic came back 7/20.
@@ -37,11 +37,32 @@ This is the whole phase. The curriculum below is secondary to that rule.
 
 ## Setup — do this first (1 hr)
 
-- [x] Install **IntelliJ IDEA Community** ([free](https://www.jetbrains.com/idea/download/)) — the debugger is the single most important tool in this phase · *2026-10-02*
-- [x] **Disable all AI completion.** Settings → check for Copilot, JetBrains AI, Tabnine, Codeium. Turn them off. · *2026-10-02*
-- [x] Learn the debugger before you learn anything else: breakpoints, step over, step into, inspect variables. **Thirty minutes here will teach you more about how code runs than ten hours of reading.** · *2026-10-02*
+Two editors for ten weeks, deliberately. **VS Code runs the MOOC exercises** (its TMC extension
+is the only maintained auto-grader — the IntelliJ one died in 2018). **IntelliJ is your real
+IDE** for the labs here and everything from Phase 0 on.
 
-✅ **Setup complete 2026-10-02.** Next: [Java MOOC](https://java-programming.mooc.fi/) Part 1.
+### VS Code — for MOOC exercises only
+- [x] VS Code installed — already in `/Applications`
+- [ ] Add `code` to your PATH: open VS Code → `Cmd+Shift+P` → "Shell Command: Install 'code' command in PATH"
+- [ ] **Extensions → install `TestMyCode`** (first launch downloads components; give it a few minutes)
+- [ ] Extensions → install **Extension Pack for Java** (Microsoft)
+- [ ] Install Maven — you need it for Phase 0 anyway: `brew install maven`
+- [ ] 🚨 **Extensions → disable GitHub Copilot and Copilot Chat.** This is where Copilot lives by default. Disabling it in IntelliJ alone does nothing.
+- [ ] Create a [MOOC.fi account](https://www.mooc.fi/), then in VS Code: TMC → log in → organization **MOOC** → course **Java Programming I**
+- [ ] Complete the first sandbox exercise to confirm the submit loop works
+
+📄 Full macOS instructions: [mooc.fi/en/installation/vscode](https://www.mooc.fi/en/installation/vscode/)
+
+### IntelliJ — your actual IDE
+- [x] Install **IntelliJ IDEA Community** ([free](https://www.jetbrains.com/idea/download/)) · *2026-10-02*
+- [x] **Disable all AI completion** — Copilot, JetBrains AI, Tabnine, Codeium · *2026-10-02*
+- [x] Learn the debugger: breakpoints, step over, step into, inspect variables · *2026-10-02*
+- [ ] Java 21 — already installed ✓
+
+> ⚠️ **The MOOC's embedded videos are in Finnish.** The written material is entirely in English
+> and is ~95% of the course; the videos are NetBeans-era tool walkthroughs you don't need.
+> **Skip every video. Read the text.** (The site's HTML `lang` is `fi`, so the occasional stray
+> Finnish page — the 404, for instance — is normal and not something you've done wrong.)
 
 ---
 
@@ -55,6 +76,9 @@ any price, and it is more useful to you right now than *Effective Java* or any O
 
 Work through **Parts 1–7** across this phase. Do **every** exercise, including the ones that look
 too easy. The easy ones are where the runtime semantics live.
+
+**Read the material in your browser; write the exercises in VS Code with TMC.** Skip the videos —
+they're Finnish, and they only cover tooling you aren't using.
 
 **Supporting:**
 - 🧪🆓 [Exercism — Java track](https://exercism.org/tracks/java) — small problems with human mentorship; use when the MOOC feels repetitive
@@ -72,7 +96,7 @@ reading it now would be wasted.
 
 - References vs values; what a variable actually holds
 - **Immutability** — why `s.toUpperCase()` doesn't change `s`, and which other methods trap you
-- `==` vs `.equals()`, the string pool, the Integer cache (-128 to 127)
+- `==` vs `.equals()`, the string pool, the Integer cache (−128 to 127)
 - `equals`/`hashCode` as a contract, and what breaks when you ignore it
 - Stack vs heap, garbage collection at a working level
 - Autoboxing and the `null` unboxing NPE
@@ -185,7 +209,7 @@ entries become the best material in the whole project.
 
 ---
 
-## ✅ Phase -1 Checkpoint
+## ✅ Phase −1 Checkpoint
 
 The gate to Phase 0. Be strict with yourself here; the whole plan rests on it.
 
