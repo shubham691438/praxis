@@ -24,8 +24,26 @@ read docs/week-NN-*.md  →  implement the stubs  →  mvn test  →  green  →
 
 ```bash
 cd ~/Downloads/praxis/foundations
-mvn -q test
+./check
 ```
+
+```
+  Week 01 — Values, References & Identity
+
+     Temperature      ░░░░░  0/5
+     StringFacts      ░░░░   0/4
+     BoxedNumbers     ░░░    0/3
+     References       ░░░    0/3
+     Money            █░░░░░░  1/7
+
+   1/22 passing (4%)
+
+   Next: Temperature.storesCelsius
+          TODO: implement the constructor
+```
+
+It tells you how far you are and which exercise is next, in lesson order. One week only:
+`./check 01`. Raw Maven output if you want it: `mvn test`.
 
 In IntelliJ: open the `foundations` folder, let it import the Maven project, then click the
 green arrow next to `Week01Test`. The debugger is right there — use it.

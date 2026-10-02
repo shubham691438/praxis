@@ -34,9 +34,10 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${surefire.version}</version>
         <configuration>
-          <!-- keep going after failures so you see every remaining task -->
-          <testFailureIgnore>false</testFailureIgnore>
-          <trimStackTrace>false</trimStackTrace>
+          <!-- ./check parses the XML reports and prints the readable summary -->
+          <trimStackTrace>true</trimStackTrace>
+          <useFile>true</useFile>
+          <redirectTestOutputToFile>false</redirectTestOutputToFile>
         </configuration>
       </plugin>
     </plugins>

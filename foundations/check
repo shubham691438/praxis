@@ -1,0 +1,102 @@
+#!/usr/bin/env bash
+# Run the exercises and print a readable summary.
+#   ./check           all weeks
+#   ./check 01        one week
+set -uo pipefail
+cd "$(dirname "${BASH_SOURCE[0]}")"
+export JAVA_HOME="${JAVA_HOME:-$(/usr/libexec/java_home -v 21 2>/dev/null)}"
+
+WEEK="${1:-}"
+rm -rf target/surefire-reports 2>/dev/null
+
+if [[ -n "$WEEK" ]]; then
+  OUT=$(mvn -B test -Dtest="Week${WEEK}Test" -Dsurefire.failIfNoSpecifiedTests=false 2>&1)
+else
+  OUT=$(mvn -B test 2>&1)
+fi
+
+# Compile errors are a different problem — show them plainly and stop.
+if grep -q "COMPILATION ERROR\|BUILD FAILURE.*compile" <<<"$OUT"; then
+  echo ""
+  echo "  ✗ Does not compile:"
+  echo ""
+  grep -E "^\[ERROR\].*\.java" <<<"$OUT" | sed 's/^\[ERROR\]/   /' | head -20
+  echo ""
+  exit 1
+fi
+
+python3 - <<'PY'
+import glob, re
+from collections import OrderedDict
+
+WEEKS = {"01": "Values, References & Identity"}
+
+# lesson order, not alphabetical — "Next" must point at the right exercise
+ORDER = {"01": ["Temperature", "StringFacts", "BoxedNumbers", "References", "Money"]}
+
+files = sorted(glob.glob("target/surefire-reports/TEST-*.xml"))
+if not files:
+    print("\n  No test reports found. Try:  mvn test\n"); raise SystemExit(1)
+
+TC   = re.compile(r'<testcase\b[^>]*?\bname="([^"]+)"[^>]*?>(?:(?!</testcase>).)*?(?:(<failure|<error)\b[^>]*?\bmessage="([^"]*)")?',
+                  re.S)
+SUITE= re.compile(r'<testsuite\b[^>]*?\bname="([^"]+)"')
+
+collected, first = {}, None
+for f in files:
+    raw = open(f, encoding="utf-8", errors="replace").read()
+    sm = SUITE.search(raw)
+    if not sm: continue
+    m = re.search(r"Week(\d+)Test\$(\w+)", sm.group(1))
+    if not m: continue
+    week, grp = m.group(1), m.group(2)
+    grp = grp[:-4] if grp.endswith("Test") else grp
+
+    # split per testcase block so a failure can't leak across cases
+    for block in re.findall(r'<testcase\b.*?(?:</testcase>|/>)', raw, re.S):
+        nm = re.search(r'\bname="([^"]+)"', block)
+        if not nm: continue
+        bad = ('<failure' in block) or ('<error' in block)
+        msg = re.search(r'(?:failure|error)\b[^>]*?\bmessage="([^"]*)"', block)
+        txt = (msg.group(1) if msg else "").replace("&quot;",'"').replace("&amp;","&")
+        txt = txt.strip().splitlines()[0][:88] if txt.strip() else ""
+        collected.setdefault((week, grp), []).append((nm.group(1), not bad, txt))
+
+# reorder to lesson sequence, then find the first unfinished exercise
+groups = OrderedDict()
+for week in sorted({w for w, _ in collected}):
+    order = ORDER.get(week, [])
+    keys = sorted((k for k in collected if k[0] == week),
+                  key=lambda k: order.index(k[1]) if k[1] in order else 99)
+    for k in keys:
+        groups[k] = [r[1] for r in collected[k]]
+        if first is None:
+            for name, good, msg in collected[k]:
+                if not good:
+                    first = (k[1], name, msg); break
+
+cur, tot, ok = None, 0, 0
+for (week, grp), res in groups.items():
+    if week != cur:
+        cur = week
+        print(f"\n\033[1m  Week {week} — {WEEKS.get(week,'')}\033[0m\n")
+    p, n = sum(res), len(res)
+    tot += n; ok += p
+    bar = "\033[32m" + "█"*p + "\033[90m" + "░"*(n-p) + "\033[0m"
+    mark = "\033[32m✓\033[0m" if p == n else " "
+    print(f"   {mark} {grp:<16} {bar}  {p}/{n}")
+
+pct = int(ok/tot*100) if tot else 0
+col = "\033[32m" if ok == tot else ("\033[33m" if ok else "\033[31m")
+print(f"\n   {col}{ok}/{tot} passing ({pct}%)\033[0m")
+
+if first:
+    grp, name, msg = first
+    print(f"\n\033[1m   Next:\033[0m {grp}.{name}")
+    if msg: print(f"          \033[90m{msg}\033[0m")
+    print("\n   \033[90mStuck? Read the test — it states the requirement.\033[0m")
+else:
+    print("\n   \033[32m★ Week complete.\033[0m")
+    print("   \033[90mcd .. && ./bin/log \"week 1 — values and references\"\033[0m")
+print()
+PY
