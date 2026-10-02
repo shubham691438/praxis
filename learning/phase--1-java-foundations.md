@@ -107,6 +107,37 @@ book in your browser — no account, no TMC, no plugin. **Optional, not required
 
 ---
 
+## Week by week — how to run both sources
+
+Two sources only work with a mapping. **MOOC is what you read; Exercism is what you write.**
+Read the MOOC section first, then do the matching Exercism concept — reading gives the
+continuity, exercises make it stick.
+
+| Wk | Read — MOOC | Write — Exercism concepts | Fixes |
+|---|---|---|---|
+| 1 | Part 1 — all | Basics, Numbers, Booleans, If-Else | Q2 floating point |
+| 2 | Part 2 — loops, methods | For Loops, For-Each, Ternary, Switch, Chars | — |
+| 3 | Part 3 — errors, Lists, Arrays, Strings | Arrays, **Lists**, Strings | **Q3, Q11** |
+| 4 | Part 4 — intro OOP, files | Classes, **Constructors** | **Q7** |
+| 5 | **Part 5 — primitive vs reference variables, objects and references** | **Nullability** | **Q1, Q4, Q12** ⭐ |
+| 6 | — | **Maps, Sets**, Enums | **Q10, Q12** |
+| 7 | Part 3 §1 again — discovering errors | **Exceptions** | **Q13, Q14** |
+| 8 | Part 6 — UI vs logic, testing | **Inheritance, Interfaces**, Method Overloading, Generic Types | **Q8** |
+| 9 | — | *(Exercism has neither)* [dev.java Streams](https://dev.java/learn/api/streams/) + [Concurrency](https://dev.java/learn/concurrency/) | **Q15** |
+| 10 | — | **Capstone** — §7 below | — |
+
+**Week 5 is the most important week of this phase.** MOOC Part 5 §3–4 teaches primitive vs
+reference variables and object references directly — the exact thing Q1, Q4 and Q12 caught. Do
+not rush it.
+
+MOOC Part 7 (paradigms, algorithms) is optional. Skip it unless you want it.
+
+> **Request Exercism mentoring in weeks 3, 5, 7 and 8 at minimum** — the weeks covering your
+> actual gaps. It's free, and a human saying "this works, but here's what a Java developer would
+> write" is the feedback loop AI-written code has been denying you.
+
+---
+
 ## 1. Object semantics & memory — 18 hrs
 *Why you missed Q1, Q3, Q4*
 
