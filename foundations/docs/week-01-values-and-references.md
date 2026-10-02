@@ -4,6 +4,12 @@
 
 > Read a section, then do its exercise. Don't read the whole thing first.
 
+**Files** — [`Temperature`](../src/main/java/dev/praxis/foundations/week01/Temperature.java) · [`StringFacts`](../src/main/java/dev/praxis/foundations/week01/StringFacts.java) ·
+[`BoxedNumbers`](../src/main/java/dev/praxis/foundations/week01/BoxedNumbers.java) · [`References`](../src/main/java/dev/praxis/foundations/week01/References.java) ·
+[`Money`](../src/main/java/dev/praxis/foundations/week01/Money.java) · [tests](../src/test/java/dev/praxis/foundations/week01/Week01Test.java)
+
+Run `./check` from `foundations/` at any point to see where you are.
+
 ---
 
 ## Why this is week 1
@@ -85,7 +91,9 @@ method returns a new String.**
 Why bother? Immutable objects are safe to share — across methods, across threads, as Map keys —
 because nobody can change them behind your back. You'll build two immutable classes this week.
 
-> 🔨 **Exercise 1: `Temperature`** · 🔨 **Exercise 2: `StringFacts`**
+> 🔨 **Exercise 1: [`Temperature.java`](../src/main/java/dev/praxis/foundations/week01/Temperature.java)** · 🔨 **Exercise 2: [`StringFacts.java`](../src/main/java/dev/praxis/foundations/week01/StringFacts.java)**
+>
+> Tests: [`Week01Test`](../src/test/java/dev/praxis/foundations/week01/Week01Test.java) → `TemperatureTest`, `StringFactsTest`
 
 ---
 
@@ -137,7 +145,9 @@ c == d         // false — outside the cache, two objects
 Find the exact boundary yourself in Exercise 3. Don't look it up — the point is that you *saw*
 it flip.
 
-> 🔨 **Exercise 3: `BoxedNumbers`**
+> 🔨 **Exercise 3: [`BoxedNumbers.java`](../src/main/java/dev/praxis/foundations/week01/BoxedNumbers.java)**
+>
+> Tests: [`Week01Test`](../src/test/java/dev/praxis/foundations/week01/Week01Test.java) → `BoxedNumbersTest`
 
 ---
 
@@ -170,7 +180,9 @@ void reassign(List<String> items) {
 A method can **change what an object contains**. It can never **change which object the
 caller's variable points at.** That one sentence is Q4.
 
-> 🔨 **Exercise 4: `References`**
+> 🔨 **Exercise 4: [`References.java`](../src/main/java/dev/praxis/foundations/week01/References.java)**
+>
+> Tests: [`Week01Test`](../src/test/java/dev/praxis/foundations/week01/Week01Test.java) → `ReferencesTest`
 
 ---
 
@@ -193,7 +205,9 @@ new BigDecimal(0.1)     // 0.1000000000000000055511151231257827... — you impor
 One more trap, which catches experienced developers: `BigDecimal.equals()` considers *scale*,
 so `10.5` and `10.50` are **not** equal by it. Use `compareTo(other) == 0` for value equality.
 
-> 🔨 **Exercise 5: `Money`**
+> 🔨 **Exercise 5: [`Money.java`](../src/main/java/dev/praxis/foundations/week01/Money.java)**
+>
+> Tests: [`Week01Test`](../src/test/java/dev/praxis/foundations/week01/Week01Test.java) → `MoneyTest`
 
 ---
 
