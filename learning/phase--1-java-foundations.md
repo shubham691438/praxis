@@ -37,9 +37,11 @@ This is the whole phase. The curriculum below is secondary to that rule.
 
 ## Setup — do this first (1 hr)
 
-- [ ] Install **IntelliJ IDEA Community** ([free](https://www.jetbrains.com/idea/download/)) — the debugger is the single most important tool in this phase
-- [ ] **Disable all AI completion.** Settings → check for Copilot, JetBrains AI, Tabnine, Codeium. Turn them off.
-- [ ] Learn the debugger before you learn anything else: breakpoints, step over, step into, inspect variables. **Thirty minutes here will teach you more about how code runs than ten hours of reading.**
+- [x] Install **IntelliJ IDEA Community** ([free](https://www.jetbrains.com/idea/download/)) — the debugger is the single most important tool in this phase · *2026-10-02*
+- [x] **Disable all AI completion.** Settings → check for Copilot, JetBrains AI, Tabnine, Codeium. Turn them off. · *2026-10-02*
+- [x] Learn the debugger before you learn anything else: breakpoints, step over, step into, inspect variables. **Thirty minutes here will teach you more about how code runs than ten hours of reading.** · *2026-10-02*
+
+✅ **Setup complete 2026-10-02.** Next: [Java MOOC](https://java-programming.mooc.fi/) Part 1.
 
 ---
 
