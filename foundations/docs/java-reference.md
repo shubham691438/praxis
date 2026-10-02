@@ -11,6 +11,7 @@ front to back. Use `Cmd+F`.
 - [Access modifiers](#access-modifiers)
 - [`static`](#static)
 - [Method anatomy](#method-anatomy)
+- [`new` and constructors](#new-and-constructors)
 - [Common compile errors](#common-compile-errors)
 
 ---
@@ -208,6 +209,61 @@ public static double convert(double celsius) throws IOException { ... }
 
 `return` exits immediately. Any statement after it in the same block is **unreachable**, which
 is a compile error in Java — not a warning.
+
+---
+
+## `new` and constructors
+
+`new` is how you create an object.
+
+```java
+new ClassName(arguments)
+```
+
+Three steps:
+1. Allocate space on the heap for a fresh object
+2. **Run that class's constructor**, passing the arguments
+3. Return the address of the new object
+
+A **constructor** is the method with no return type whose name matches the class:
+
+```java
+public final class Temperature {
+    private final double celsius;
+
+    public Temperature(double celsius) {   // ← the constructor
+        this.celsius = celsius;            //   runs when someone calls new Temperature(...)
+    }
+}
+
+Temperature t = new Temperature(25.0);     // runs the above with celsius = 25.0
+```
+
+Notice the constructor has **no return type** — not even `void`. That's what distinguishes it
+from an ordinary method. It implicitly returns the new object.
+
+`this.celsius = celsius` disambiguates: `this.celsius` is the field, bare `celsius` is the
+parameter. When their names differ you can drop `this.`, but using it is clearer.
+
+### The immutable-update pattern
+
+An immutable class never modifies itself — it builds a new instance:
+
+```java
+public Temperature warmer(double degrees) {
+    return new Temperature(/* some new value */);
+}
+```
+
+Every immutable type in Java works this way:
+
+| Call | Returns |
+|---|---|
+| `"abc".toUpperCase()` | a new String |
+| `bigDecimal.add(other)` | a new BigDecimal |
+| `localDate.plusDays(3)` | a new LocalDate |
+
+In every case the original is untouched, which is why ignoring the return value does nothing.
 
 ---
 
