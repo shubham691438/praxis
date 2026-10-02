@@ -41,7 +41,7 @@ idea where to start. **Start with the ⭐ one. Everything else in the phase file
 
 | Phase | Section | ⭐ Start with | Cost |
 |---|---|---|---|
-| **−1** | **All of it** | **[Java MOOC — Helsinki](https://java-programming.mooc.fi/), Parts 1–7** | 🆓 |
+| **-1** | **All of it** | **[Java MOOC — Helsinki](https://java-programming.mooc.fi/), Parts 1–7** | 🆓 |
 | 0 | Modern Java | Do the lab, then [JEP 444](https://openjdk.org/jeps/444) | 🆓 |
 | 0 | Maven | [Intro to the Build Lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html) | 🆓 |
 | 0 | Docker | *Docker Deep Dive* — Poulton | 💰 ~$15 |
@@ -90,7 +90,7 @@ The phase files name ~15 paid books. Buying them all is ~$500 and you will read 
 | When | Book | Why this one |
 |---|---|---|
 | **Now** | **Designing Data-Intensive Applications** — Kleppmann | Runs across the entire project. The highest-leverage book in backend engineering. If you buy one thing, this. |
-| **Phase 0** | **Effective Java, 3rd ed** — Bloch | Not yet — it assumes fluency you're building in Phase −1. Buying it now wastes it. |
+| **Phase 0** | **Effective Java, 3rd ed** — Bloch | Not yet — it assumes fluency you're building in Phase -1. Buying it now wastes it. |
 | **Phase 1** | **High-Performance Java Persistence** — Mihalcea | JPA is where your bugs will be. The author's free blog may be enough — try that first. |
 | **Phase 3** | **Building Microservices, 2nd ed** — Newman | The one book for the most important phase |
 | **Phase 6** | **The Kubernetes Book** — Poulton | Cheap, short, updated yearly |
@@ -134,7 +134,7 @@ now, but be aware it's a bet.
 
 ## Phases
 
-### [Phase −1 — Java, Actually Written](learning/phase--1-java-foundations.md) · 10 weeks
+### [Phase -1 — Java, Actually Written](learning/phase--1-java-foundations.md) · 10 weeks
 ⚠️ **Added 2026-10-02 after the baseline diagnostic came back 7/20.** Object semantics,
 collections, exceptions, OOP mechanics, concurrency — learned by writing roughly 200 exercises
 and one real application, with **AI code completion switched off**. Everything else rests on this.
@@ -177,7 +177,7 @@ because it is what interviews actually test and it needs months to marinate.
 
 **Weeks 1–10 — Alex Xu, *System Design Interview* Vol 1** (already owned)
 
-Read it alongside Phase −1, about a chapter a week. Phase −1 is hands-on Java practice;
+Read it alongside Phase -1, about a chapter a week. Phase -1 is hands-on Java practice;
 system design reading is a completely different mode, so the two sit together comfortably without
 competing for the same attention.
 
@@ -230,7 +230,7 @@ After Ch. 12, reread Ch. 7–9. They read completely differently the second time
 
 That's ~11 hrs/week. Protect the Saturday block above everything else.
 
-**Total: ~475 hrs across 44 weeks** (120 of them Phase −1). If you add the DSA track, budget ~14 hrs/week overall.
+**Total: ~475 hrs across 44 weeks** (120 of them Phase -1). If you add the DSA track, budget ~14 hrs/week overall.
 
 > If you miss a week, do not "catch up" by doubling the next week. Just resume. The schedule is
 > a direction, not a debt. The people who finish long projects are the ones who are bad at

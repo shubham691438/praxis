@@ -1,6 +1,6 @@
 # Day 000 — Baseline diagnostic: 7/20
 
-**Date:** 2026-10-02 · **Phase:** −1 (new) · **Time spent:** ~30 min
+**Date:** 2026-10-02 · **Phase:** -1 (new) · **Time spent:** ~30 min
 **Mode:** 📝 writing
 
 ---
@@ -42,13 +42,13 @@ what produced this result. Only writing code does.
 
 ## What changed in the plan
 
-- **Phase −1 added**: 10 weeks, ~120 hrs, roughly 200 exercises via the Helsinki Java MOOC plus
+- **Phase -1 added**: 10 weeks, ~120 hrs, roughly 200 exercises via the Helsinki Java MOOC plus
   a capstone CLI app written alone.
-- **Hard rule for Phase −1 through Phase 3: no AI-written code.** Copilot and all AI completion
+- **Hard rule for Phase -1 through Phase 3: no AI-written code.** Copilot and all AI completion
   off in the IDE. AI only for explaining a concept, or decoding an error after 15 minutes of my
   own effort.
 - *Effective Java* moves from "buy now" to Phase 0 — it assumes fluency I don't have yet.
-- Alex Xu now runs across weeks 1–10 alongside Phase −1; DDIA starts week 11.
+- Alex Xu now runs across weeks 1–10 alongside Phase -1; DDIA starts week 11.
 - **Timeline: 34 weeks → 44 weeks.** Target moves from mid-2027 to ~September 2027.
 
 ## What I don't understand yet

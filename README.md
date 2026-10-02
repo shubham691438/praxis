@@ -15,8 +15,8 @@ means of learning backend engineering.
 | | |
 |---|---|
 | **Started** | 2026-10-02 |
-| **Current phase** | Phase −1 — Java, Actually Written (learning) |
-| **Mode** | 📚 Learning · baseline diagnostic 7/20, Phase −1 added |
+| **Current phase** | Phase -1 — Java, Actually Written (learning) |
+| **Mode** | 📚 Learning · baseline diagnostic 7/20, Phase -1 added |
 | **Java** | 21 LTS |
 | **Journal entries** | see [`journal/`](journal/) |
 
@@ -77,7 +77,7 @@ Ten services, each chosen because it forces a different concept.
 
 | Phase | Learn | Build | Weeks |
 |---|---|---|---|
-| **−1** | [Java, actually written](learning/phase--1-java-foundations.md) | CLI app, written alone, no AI | 10 |
+| **-1** | [Java, actually written](learning/phase--1-java-foundations.md) | CLI app, written alone, no AI | 10 |
 | **0** | [Foundations](learning/phase-0-foundations.md) | Maven monorepo, Compose, CI | 2 |
 | **1** | [Spring & data](learning/phase-1-spring-core.md) | Modular monolith: curriculum + identity | 4 |
 | **2** | [Reactive & AI](learning/phase-2-ai-reactive.md) | `tutor` service, SSE streaming, React UI | 4 |
@@ -90,7 +90,7 @@ Ten services, each chosen because it forces a different concept.
 
 **~44 weeks at 10–12 hrs/week.** Start: 2026-10-02. Target: ~September 2027.
 
-> Phase −1 was added on day 0 after a baseline diagnostic scored 7/20. The pattern was clear:
+> Phase -1 was added on day 0 after a baseline diagnostic scored 7/20. The pattern was clear:
 > conceptual questions right, runtime-behaviour questions wrong — the signature of reading about
 > Java without writing it. Ten weeks of hands-on practice now, or a system that can't be
 > explained in seven months.

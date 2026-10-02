@@ -1,4 +1,4 @@
-# Phase −1 — Java, Actually Written
+# Phase -1 — Java, Actually Written
 
 **10 weeks · ~120 hrs** · The phase that was missing. Added 2026-10-02 after the baseline
 diagnostic came back 7/20.
@@ -70,7 +70,7 @@ reading it now would be wasted.
 
 - References vs values; what a variable actually holds
 - **Immutability** — why `s.toUpperCase()` doesn't change `s`, and which other methods trap you
-- `==` vs `.equals()`, the string pool, the Integer cache (−128 to 127)
+- `==` vs `.equals()`, the string pool, the Integer cache (-128 to 127)
 - `equals`/`hashCode` as a contract, and what breaks when you ignore it
 - Stack vs heap, garbage collection at a working level
 - Autoboxing and the `null` unboxing NPE
@@ -183,7 +183,7 @@ entries become the best material in the whole project.
 
 ---
 
-## ✅ Phase −1 Checkpoint
+## ✅ Phase -1 Checkpoint
 
 The gate to Phase 0. Be strict with yourself here; the whole plan rests on it.
 
