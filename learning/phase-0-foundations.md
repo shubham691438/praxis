@@ -3,6 +3,9 @@
 **2 weeks · ~22 hrs** · Ground you stand on. Resist the urge to skip this; every later phase
 assumes it.
 
+> **Prerequisite: [Phase −1](phase--1-java-foundations.md) must be complete** — including the
+> 16/20 diagnostic retake. This phase assumes you can read Java and predict what it does.
+
 > **Build at the end:** Maven multi-module monorepo, Docker Compose with Postgres + Redis +
 > Kafka, GitHub Actions CI running tests on every push.
 
@@ -10,7 +13,8 @@ assumes it.
 
 ## 1. Modern Java (21 LTS) — 8 hrs
 
-You write Java at work, so this is about the parts most working devs never pick up.
+Phase −1 gave you working Java. This is the modern layer on top: the parts that landed in the
+language recently and that most working Java devs still haven't picked up.
 
 **Concepts**
 - Records, sealed interfaces, pattern matching for `switch` — modelling domains without Lombok

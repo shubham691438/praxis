@@ -41,6 +41,7 @@ idea where to start. **Start with the ⭐ one. Everything else in the phase file
 
 | Phase | Section | ⭐ Start with | Cost |
 |---|---|---|---|
+| **−1** | **All of it** | **[Java MOOC — Helsinki](https://java-programming.mooc.fi/), Parts 1–7** | 🆓 |
 | 0 | Modern Java | Do the lab, then [JEP 444](https://openjdk.org/jeps/444) | 🆓 |
 | 0 | Maven | [Intro to the Build Lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html) | 🆓 |
 | 0 | Docker | *Docker Deep Dive* — Poulton | 💰 ~$15 |
@@ -77,7 +78,7 @@ idea where to start. **Start with the ⭐ one. Everything else in the phase file
 | 8 | Knowledge tracing | [pyBKT](https://github.com/CAHLR/pyBKT) | 🆓 |
 | 8 | CQRS | [Fowler — CQRS](https://martinfowler.com/bliki/CQRS.html) | 🆓 |
 
-**29 of 35 primary resources are free.**
+**30 of 36 primary resources are free.**
 
 ---
 
@@ -89,7 +90,7 @@ The phase files name ~15 paid books. Buying them all is ~$500 and you will read 
 | When | Book | Why this one |
 |---|---|---|
 | **Now** | **Designing Data-Intensive Applications** — Kleppmann | Runs across the entire project. The highest-leverage book in backend engineering. If you buy one thing, this. |
-| **Now** | **Effective Java, 3rd ed** — Bloch | Phase 0, and you'll reread it for years |
+| **Phase 0** | **Effective Java, 3rd ed** — Bloch | Not yet — it assumes fluency you're building in Phase −1. Buying it now wastes it. |
 | **Phase 1** | **High-Performance Java Persistence** — Mihalcea | JPA is where your bugs will be. The author's free blog may be enough — try that first. |
 | **Phase 3** | **Building Microservices, 2nd ed** — Newman | The one book for the most important phase |
 | **Phase 6** | **The Kubernetes Book** — Poulton | Cheap, short, updated yearly |
@@ -115,17 +116,28 @@ parallel track** — budget 3–4 hrs/week from month 3:
 - 📕💰 *Elements of Programming Interviews in Java* — if you want depth
 - Consistency beats volume. 2 problems a day for 6 months >> 40 problems in one panicked week.
 
-**2. Behavioural / leadership rounds.** Your journal is unusually good raw material for these —
+**2. AI dependency.** The diagnostic showed the gap is hands-on practice, not concepts. The plan
+now carries a hard rule: **no AI-written code through Phase 3.** AI for explaining a concept or
+decoding an error after you've tried — never for producing code. From Phase 4 you use it normally,
+by which point you're directing it rather than depending on it. Without this rule the project
+produces a repo you cannot explain, which is worse than no project.
+
+**3. Behavioural / leadership rounds.** Your journal is unusually good raw material for these —
 mine it for STAR-format stories. But practise saying them out loud; writing ≠ speaking.
 
-**3. Frontend depth.** Phase 2 gives you enough React to not embarrass the backend. That's deliberate.
+**4. Frontend depth.** Phase 2 gives you enough React to not embarrass the backend. That's deliberate.
 
-**4. Language breadth.** This is a Java/Spring plan. That's the right bet for your career right
+**5. Language breadth.** This is a Java/Spring plan. That's the right bet for your career right
 now, but be aware it's a bet.
 
 ---
 
 ## Phases
+
+### [Phase −1 — Java, Actually Written](learning/phase--1-java-foundations.md) · 10 weeks
+⚠️ **Added 2026-10-02 after the baseline diagnostic came back 7/20.** Object semantics,
+collections, exceptions, OOP mechanics, concurrency — learned by writing roughly 200 exercises
+and one real application, with **AI code completion switched off**. Everything else rests on this.
 
 ### [Phase 0 — Foundations](learning/phase-0-foundations.md) · 2 weeks
 Modern Java, Maven, Docker, Git discipline. The ground you stand on.
@@ -163,10 +175,11 @@ because it is what interviews actually test and it needs months to marinate.
 
 ### The sequence
 
-**Weeks 1–4 — Alex Xu, *System Design Interview* Vol 1** (already owned)
+**Weeks 1–10 — Alex Xu, *System Design Interview* Vol 1** (already owned)
 
-Read it alongside Phase 0. Phase 0 is Java/Maven/Docker — almost no cognitive overlap, so the
-two sit together comfortably.
+Read it alongside Phase −1, about a chapter a week. Phase −1 is hands-on Java practice;
+system design reading is a completely different mode, so the two sit together comfortably without
+competing for the same attention.
 
 - **Ch. 1–5 are the foundational ones** (scale from zero to millions, rate limiter, consistent
   hashing, key-value store, unique ID generator). The rest are case studies; read in any order.
@@ -182,20 +195,20 @@ two sit together comfortably.
 > "use consistent hashing" without knowing why it beats modulo hashing when a node dies.
 > That gap is exactly what a senior interviewer finds by asking "why?" twice. DDIA closes it.
 
-**Weeks 4–34 — 📕 *Designing Data-Intensive Applications* (Kleppmann), one chapter per week**
+**Weeks 11–44 — 📕 *Designing Data-Intensive Applications* (Kleppmann), one chapter per week**
 
 The single highest-leverage book in backend engineering. Start after Alex Xu has given you the
 vocabulary, then run it start to finish underneath the whole project.
 
-Starting at week 4 is deliberate, not a delay — it puts the chapters where they'll land hardest:
+Starting at week 11 is deliberate, not a delay — it puts the chapters where they'll land hardest:
 
 | DDIA chapters | ~Week | Lands during |
 |---|---|---|
-| Ch. 1–4 — Foundations, data models, encoding | 4–7 | Phase 1 (data modelling) |
-| **Ch. 5–6 — Replication, Partitioning** | 8–9 | Phase 1→3 transition |
-| **Ch. 7–9 — Transactions, Distributed Trouble, Consistency & Consensus** | 10–12 | **Phase 3 — exactly when you're fighting sagas, outbox and idempotency** |
-| Ch. 10–11 — Batch & Stream Processing | 13–15 | Phase 3 Kafka work |
-| Ch. 12 — The Future of Data Systems | 16 | Phase 5/8 |
+| Ch. 1–4 — Foundations, data models, encoding | 11–14 | Phase 0→1 |
+| **Ch. 5–6 — Replication, Partitioning** | 15–16 | Phase 1 |
+| **Ch. 7–9 — Transactions, Distributed Trouble, Consistency & Consensus** | 17–19 | **Phase 3 — exactly when you're fighting sagas, outbox and idempotency** |
+| Ch. 10–11 — Batch & Stream Processing | 20–22 | Phase 3 Kafka work |
+| Ch. 12 — The Future of Data Systems | 23 | Phase 5/8 |
 
 After Ch. 12, reread Ch. 7–9. They read completely differently the second time.
 
@@ -217,7 +230,7 @@ After Ch. 12, reread Ch. 7–9. They read completely differently the second time
 
 That's ~11 hrs/week. Protect the Saturday block above everything else.
 
-**Total: ~355 hrs across 34 weeks.** If you add the DSA track, budget ~14 hrs/week overall.
+**Total: ~475 hrs across 44 weeks** (120 of them Phase −1). If you add the DSA track, budget ~14 hrs/week overall.
 
 > If you miss a week, do not "catch up" by doubling the next week. Just resume. The schedule is
 > a direction, not a debt. The people who finish long projects are the ones who are bad at
