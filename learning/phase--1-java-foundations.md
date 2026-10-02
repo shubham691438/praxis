@@ -35,59 +35,56 @@ This is the whole phase. The curriculum below is secondary to that rule.
 
 ---
 
-## Setup — do this first (1 hr)
+## Setup — do this first (30 min)
 
-Two editors for ten weeks, deliberately. **VS Code runs the MOOC exercises** (its TMC extension
-is the only maintained auto-grader — the IntelliJ one died in 2018). **IntelliJ is your real
-IDE** for the labs here and everything from Phase 0 on.
+**One editor. IntelliJ. Nothing else.** No VS Code, no TMC, no plugins to hunt down.
 
-### VS Code — for MOOC exercises only
-- [x] VS Code installed — already in `/Applications`
-- [ ] Add `code` to your PATH: open VS Code → `Cmd+Shift+P` → "Shell Command: Install 'code' command in PATH"
-- [ ] **Extensions → install `TestMyCode`** (first launch downloads components; give it a few minutes)
-- [ ] Extensions → install **Extension Pack for Java** (Microsoft)
-- [ ] Install Maven — you need it for Phase 0 anyway: `brew install maven`
-- [ ] 🚨 **Extensions → disable GitHub Copilot and Copilot Chat.** This is where Copilot lives by default. Disabling it in IntelliJ alone does nothing.
-- [ ] Create a [MOOC.fi account](https://www.mooc.fi/), then in VS Code: TMC → log in → organization **MOOC** → course **Java Programming I**
-- [ ] Complete the first sandbox exercise to confirm the submit loop works
+- [x] **IntelliJ IDEA Community** installed · *2026-10-02*
+- [x] **All AI completion disabled** — Copilot, JetBrains AI, Tabnine, Codeium · *2026-10-02*
+- [x] Debugger basics: breakpoints, step over, step into, inspect variables · *2026-10-02*
+- [x] Java 21 LTS, `JAVA_HOME` pinned to it · *2026-10-02*
+- [x] Maven 3.10 (needed from Phase 0) · *2026-10-02*
+- [ ] Create a free [Exercism account](https://exercism.org/tracks/java) and join the Java track
+- [ ] Install the CLI: `brew install exercism`
+- [ ] Configure it with your token (Exercism shows the exact command after signup)
+- [ ] `exercism download --track=java --exercise=hello-world`, open the folder in IntelliJ, run `./gradlew test`
 
-📄 Full macOS instructions: [mooc.fi/en/installation/vscode](https://www.mooc.fi/en/installation/vscode/)
-
-### IntelliJ — your actual IDE
-- [x] Install **IntelliJ IDEA Community** ([free](https://www.jetbrains.com/idea/download/)) · *2026-10-02*
-- [x] **Disable all AI completion** — Copilot, JetBrains AI, Tabnine, Codeium · *2026-10-02*
-- [x] Learn the debugger: breakpoints, step over, step into, inspect variables · *2026-10-02*
-- [ ] Java 21 — already installed ✓
-
-> ⚠️ **The MOOC's embedded videos are in Finnish.** The written material is entirely in English
-> and is ~95% of the course; the videos are NetBeans-era tool walkthroughs you don't need.
-> **Skip every video. Read the text.** (The site's HTML `lang` is `fi`, so the occasional stray
-> Finnish page — the 404, for instance — is normal and not something you've done wrong.)
+> Each exercise ships with a Gradle wrapper, so tests run with no Gradle install and nothing
+> conflicts with the Maven you'll use for Praxis itself.
 
 ---
 
 ## The primary resource
 
-⭐ **[Java Programming MOOC — University of Helsinki](https://java-programming.mooc.fi/)** · 🆓
+⭐ **[Exercism — Java Track](https://exercism.org/tracks/java)** · 🆓 **free, permanently**
 
-Free, open, and built on roughly 200 auto-graded programming exercises. It is exercise-first by
-design — you cannot progress by reading. For your exact situation there is nothing better at
-any price, and it is more useful to you right now than *Effective Java* or any O'Reilly book.
+**158 exercises across 26 concepts**, automated analysis of your code, and **free human mentoring** —
+real people who read what you wrote and tell you why it isn't idiomatic. Nothing else free offers that.
 
-Work through **Parts 1–7** across this phase. Do **every** exercise, including the ones that look
-too easy. The easy ones are where the runtime semantics live.
+Two modes, use both:
+- **Learn** — concept exercises in a fixed order. This is your syllabus; follow it top to bottom.
+- **Practice** — open-ended problems. Use these to drill whatever the section you're on covers.
 
-**Read the material in your browser; write the exercises in VS Code with TMC.** Skip the videos —
-they're Finnish, and they only cover tooling you aren't using.
+**Request mentoring on every fifth exercise minimum.** It is the single most valuable thing on
+the platform and the part most people skip. A stranger telling you "this works, but here's what
+a Java developer would have written" is worth more than ten more exercises.
 
-**Supporting:**
-- 🧪🆓 [Exercism — Java track](https://exercism.org/tracks/java) — small problems with human mentorship; use when the MOOC feels repetitive
-- 🎥🆓 [Coding with John](https://www.youtube.com/@CodingWithJohn) — short, sharp videos on exactly the gotchas you missed. Watch his videos on `equals`/`hashCode`, string immutability, and try-with-resources.
+### For reading — no tooling required
+
+⭐ **[Java Programming MOOC — Helsinki](https://java-programming.mooc.fi/)** · 🆓 · **browser only**
+
+Its written material is the best free structured Java text available, in English. **Read it in
+your browser as a book.** No account, no TMC, no NetBeans, no VS Code, no plugin.
+
+> ⚠️ **Skip every video — they're in Finnish**, and they only cover tooling you aren't using.
+> The occasional stray Finnish page (the 404, for one) is the site's translation gaps, not a
+> mistake on your part.
+
+### Supporting
+- 🎥🆓 [Coding with John](https://www.youtube.com/@CodingWithJohn) — short English videos on exactly the gotchas you missed: `equals`/`hashCode`, string immutability, try-with-resources
 - 📄🆓 [dev.java/learn](https://dev.java/learn/) — Oracle's modern tutorials; reference, not curriculum
-- 📕💰 *Head First Java, 3rd ed* — only if you want a book. Covers Java 17, genuinely designed for building intuition. Optional.
 
-**Not yet:** *Effective Java* moves to Phase 0. It assumes fluency you're building here, and
-reading it now would be wasted.
+**Not yet:** *Effective Java* moves to Phase 0 — it assumes fluency you're building here.
 
 ---
 

@@ -41,7 +41,8 @@ idea where to start. **Start with the ⭐ one. Everything else in the phase file
 
 | Phase | Section | ⭐ Start with | Cost |
 |---|---|---|---|
-| **-1** | **All of it** | **[Java MOOC — Helsinki](https://java-programming.mooc.fi/), Parts 1–7** | 🆓 |
+| **-1** | **Writing code** | **[Exercism Java track](https://exercism.org/tracks/java)** — 158 exercises, free mentoring | 🆓 |
+| **-1** | **Reading** | [Java MOOC — Helsinki](https://java-programming.mooc.fi/), browser only | 🆓 |
 | 0 | Modern Java | Do the lab, then [JEP 444](https://openjdk.org/jeps/444) | 🆓 |
 | 0 | Maven | [Intro to the Build Lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html) | 🆓 |
 | 0 | Docker | *Docker Deep Dive* — Poulton | 💰 ~$15 |
@@ -78,7 +79,7 @@ idea where to start. **Start with the ⭐ one. Everything else in the phase file
 | 8 | Knowledge tracing | [pyBKT](https://github.com/CAHLR/pyBKT) | 🆓 |
 | 8 | CQRS | [Fowler — CQRS](https://martinfowler.com/bliki/CQRS.html) | 🆓 |
 
-**30 of 36 primary resources are free.**
+**31 of 37 primary resources are free.**
 
 ---
 
