@@ -33,10 +33,102 @@ before writing production code for that phase.
 
 ---
 
+## ⭐ The one resource per section
+
+The failure mode of any curriculum this size is paralysis — five resources per section and no
+idea where to start. **Start with the ⭐ one. Everything else in the phase file is for when the
+⭐ one leaves you with a question.**
+
+| Phase | Section | ⭐ Start with | Cost |
+|---|---|---|---|
+| 0 | Modern Java | Do the lab, then [JEP 444](https://openjdk.org/jeps/444) | 🆓 |
+| 0 | Maven | [Intro to the Build Lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html) | 🆓 |
+| 0 | Docker | *Docker Deep Dive* — Poulton | 💰 ~$15 |
+| 0 | Git | [Learn Git Branching](https://learngitbranching.js.org/) | 🆓 |
+| 1 | Spring internals | [Laurentiu Spilca — YouTube](https://www.youtube.com/@laurspilca) | 🆓 |
+| 1 | JPA / Hibernate | [vladmihalcea.com](https://vladmihalcea.com/) | 🆓 |
+| 1 | PostgreSQL | [Use The Index, Luke](https://use-the-index-luke.com/) | 🆓 |
+| 1 | Spring Security | [Filter chain reference](https://docs.spring.io/spring-security/reference/servlet/architecture.html) | 🆓 |
+| 1 | Testing | [rieckpil.de](https://rieckpil.de/) | 🆓 |
+| 2 | Reactor | [tech.io Reactor 3 playground](https://tech.io/playgrounds/929/reactive-programming-with-reactor-3/Intro) | 🆓 |
+| 2 | SSE | [MDN — Server-Sent Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events) | 🆓 |
+| 2 | Claude API | [Prompt engineering guide](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview) | 🆓 |
+| 2 | React | [react.dev/learn](https://react.dev/learn) | 🆓 |
+| 3 | Decomposition | *Building Microservices, 2nd ed* — Newman | 💰 |
+| 3 | Kafka | [Confluent Developer courses](https://developer.confluent.io/courses/) | 🆓 |
+| 3 | Distributed data | [microservices.io patterns](https://microservices.io/patterns/index.html) + DDIA Ch. 7–9 | 🆓 |
+| 3 | Resilience | [AWS Builders' Library](https://aws.amazon.com/builders-library/) | 🆓 |
+| 3 | Observability | [OpenTelemetry Java docs](https://opentelemetry.io/docs/languages/java/) | 🆓 |
+| 4 | Container internals | [Liz Rice — Containers From Scratch](https://www.youtube.com/watch?v=8fi7uSYlOdc) | 🆓 |
+| 4 | Sandboxing | [gVisor docs](https://gvisor.dev/docs/) | 🆓 |
+| 4 | K8s Jobs | [kubernetes.io — Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/job/) | 🆓 |
+| 4 | AppSec | [OWASP Cheat Sheets](https://cheatsheetseries.owasp.org/) | 🆓 |
+| 5 | Vector search | [pgvector README](https://github.com/pgvector/pgvector) | 🆓 |
+| 5 | RAG | [Anthropic — Contextual Retrieval](https://www.anthropic.com/news/contextual-retrieval) | 🆓 |
+| 5 | Postgres at scale | [PostgreSQL Internals](https://postgrespro.com/community/books/internals) — Rogov | 🆓 |
+| 6 | Kubernetes | *The Kubernetes Book* — Poulton | 💰 ~$20 |
+| 6 | GitOps | [Argo CD docs](https://argo-cd.readthedocs.io/) | 🆓 |
+| 6 | Observability | [Google SRE Book](https://sre.google/sre-book/table-of-contents/) Ch. 4, 6 | 🆓 |
+| 7 | AWS | [AWS Builders' Library](https://aws.amazon.com/builders-library/) | 🆓 |
+| 7 | Terraform | [HashiCorp tutorials](https://developer.hashicorp.com/terraform/tutorials) | 🆓 |
+| 7 | Performance | [Gil Tene — How NOT to Measure Latency](https://www.youtube.com/watch?v=lJ8ydIuPFeU) | 🆓 |
+| 7 | Chaos | [principlesofchaos.org](https://principlesofchaos.org/) | 🆓 |
+| 8 | Spaced repetition | [FSRS algorithm wiki](https://github.com/open-spaced-repetition/fsrs4anki/wiki/The-Algorithm) | 🆓 |
+| 8 | Knowledge tracing | [pyBKT](https://github.com/CAHLR/pyBKT) | 🆓 |
+| 8 | CQRS | [Fowler — CQRS](https://martinfowler.com/bliki/CQRS.html) | 🆓 |
+
+**29 of 35 primary resources are free.**
+
+---
+
+## 💰 What to actually buy
+
+The phase files name ~15 paid books. Buying them all is ~$500 and you will read three of them.
+**Buy in this order, only when you reach the phase:**
+
+| When | Book | Why this one |
+|---|---|---|
+| **Now** | **Designing Data-Intensive Applications** — Kleppmann | Runs across the entire project. The highest-leverage book in backend engineering. If you buy one thing, this. |
+| **Now** | **Effective Java, 3rd ed** — Bloch | Phase 0, and you'll reread it for years |
+| **Phase 1** | **High-Performance Java Persistence** — Mihalcea | JPA is where your bugs will be. The author's free blog may be enough — try that first. |
+| **Phase 3** | **Building Microservices, 2nd ed** — Newman | The one book for the most important phase |
+| **Phase 6** | **The Kubernetes Book** — Poulton | Cheap, short, updated yearly |
+
+Everything else: wait until the phase, and check whether the free primary resource was enough
+first. It usually is.
+
+> An O'Reilly subscription (~$49/mo) covers *Effective Java*, *Building Microservices*,
+> *Kubernetes Patterns*, *Container Security*, *Observability Engineering*, *Optimizing Java*
+> and *Release It!*. If you're going to read four or more of those, subscribe for two months
+> during Phases 3–4 instead of buying.
+
+---
+
+## ⚠️ What this plan does NOT cover
+
+Being honest about scope is better than discovering the gap in an interview loop.
+
+**1. DSA / coding rounds.** This plan makes you a strong backend *engineer*. It does nothing for
+the LeetCode-style round that most senior backend loops still include. That is a **separate,
+parallel track** — budget 3–4 hrs/week from month 3:
+- 🆓 [NeetCode 150](https://neetcode.io/practice) — the right list; don't grind 500 random problems
+- 📕💰 *Elements of Programming Interviews in Java* — if you want depth
+- Consistency beats volume. 2 problems a day for 6 months >> 40 problems in one panicked week.
+
+**2. Behavioural / leadership rounds.** Your journal is unusually good raw material for these —
+mine it for STAR-format stories. But practise saying them out loud; writing ≠ speaking.
+
+**3. Frontend depth.** Phase 2 gives you enough React to not embarrass the backend. That's deliberate.
+
+**4. Language breadth.** This is a Java/Spring plan. That's the right bet for your career right
+now, but be aware it's a bet.
+
+---
+
 ## Phases
 
 ### [Phase 0 — Foundations](learning/phase-0-foundations.md) · 2 weeks
-Modern Java, Gradle, Docker, Git discipline. The ground you stand on.
+Modern Java, Maven, Docker, Git discipline. The ground you stand on.
 
 ### [Phase 1 — Spring & Data](learning/phase-1-spring-core.md) · 4 weeks
 Spring Boot internals, JPA done right, Postgres, Spring Security, Testcontainers.
@@ -92,3 +184,9 @@ Supplement, from month 4 onward, 2 hrs/week:
 | **Any day** · 20min | One DDIA chapter section |
 
 That's ~11 hrs/week. Protect the Saturday block above everything else.
+
+**Total: ~355 hrs across 34 weeks.** If you add the DSA track, budget ~14 hrs/week overall.
+
+> If you miss a week, do not "catch up" by doubling the next week. Just resume. The schedule is
+> a direction, not a debt. The people who finish long projects are the ones who are bad at
+> quitting, not the ones who never slip.

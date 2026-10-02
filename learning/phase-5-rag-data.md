@@ -1,6 +1,6 @@
 # Phase 5 — Data & Retrieval
 
-**3 weeks · ~34 hrs** · Make the tutor teach from *your* material — your notes, Udemy
+**3 weeks · ~30 hrs** · Make the tutor teach from *your* material — your notes, Udemy
 transcripts, the Joveo codebase — not just its training data.
 
 > **Build at the end:** `knowledge` service — ingests documents, chunks and embeds them into

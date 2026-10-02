@@ -1,6 +1,6 @@
 # Phase 2 — Reactive & AI
 
-**4 weeks · ~45 hrs** · The phase that makes the project *feel* impressive. Streaming AI
+**4 weeks · ~40 hrs** · The phase that makes the project *feel* impressive. Streaming AI
 responses token-by-token is the demo that gets attention.
 
 > **Build at the end:** `tutor` service — WebFlux, streams Claude responses over SSE to a React
@@ -25,7 +25,6 @@ responses token-by-token is the demo that gets attention.
 **Resources**
 - 📄🆓 **[Reactor Reference Guide](https://projectreactor.io/docs/core/release/reference/)** — the "Which operator do I need?" appendix is gold
 - 🆓 **[Reactive Programming with Reactor 3 — tech.io](https://tech.io/playgrounds/929/reactive-programming-with-reactor-3/Intro)** — free interactive lessons from the Reactor team. Do all of them.
-- 📕💰 [Hands-On Reactive Programming in Spring 5](https://www.packtpub.com/en-us/product/hands-on-reactive-programming-in-spring-5-9781787284951) — dated version, concepts still right
 - 🎥🆓 [Josh Long — Spring Tips](https://www.youtube.com/@SpringSourceDev) — WebFlux episodes
 - 📄🆓 [Spring WebFlux reference](https://docs.spring.io/spring-framework/reference/web/webflux.html)
 

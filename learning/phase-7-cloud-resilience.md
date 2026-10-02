@@ -1,6 +1,6 @@
 # Phase 7 — Cloud & Resilience
 
-**4 weeks · ~45 hrs** · Ship it for real, then try to break it. Prove it with numbers.
+**4 weeks · ~40 hrs** · Ship it for real, then try to break it. Prove it with numbers.
 
 > **Build at the end:** Running on AWS EKS, provisioned entirely by Terraform. Load-tested with
 > k6, chaos-tested, with a documented performance story and a monthly cost figure.

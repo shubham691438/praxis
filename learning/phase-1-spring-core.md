@@ -22,7 +22,7 @@ Not "how to use `@Service`." *How the container actually works.*
 - Startup: what `SpringApplication.run()` actually does, step by step
 
 **Resources**
-- 📕💰 **[Spring Start Here](https://www.manning.com/books/spring-start-here) — Laurentiu Spilca.** Best structured intro to the *container*, not just the annotations.
+- 📕💰 [Spring Start Here](https://www.manning.com/books/spring-start-here) — Spilca. Good on the *container* rather than the annotations, but pitched at beginners. **You write Spring daily — skip unless the IoC lifecycle genuinely feels fuzzy.**
 - 🎥🆓 **[Laurentiu Spilca — YouTube](https://www.youtube.com/@laurspilca)** — exceptionally clear on proxies and transactions
 - 🆓 **[Spring Academy](https://spring.academy/)** — VMware's own free courses. Do "Spring Framework Essentials."
 - 📄🆓 [Spring Framework Reference — Core](https://docs.spring.io/spring-framework/reference/core.html) — the actual docs are excellent; read the IoC chapter

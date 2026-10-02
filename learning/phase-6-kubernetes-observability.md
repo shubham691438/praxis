@@ -1,6 +1,6 @@
 # Phase 6 — Kubernetes & Observability
 
-**5 weeks · ~55 hrs** · Where the project becomes a *platform*. Also where the self-referential
+**5 weeks · ~48 hrs** · Where the project becomes a *platform*. Also where the self-referential
 demo lands: the Kubernetes lesson reads live state from the cluster it runs in.
 
 > **Build at the end:** Everything on Kubernetes. Helm charts, HPA, ArgoCD GitOps, full OTel
@@ -31,7 +31,7 @@ Not "I can write a Deployment YAML." Understand the control loop.
 **Resources**
 - 📕💰 **[The Kubernetes Book](https://nigelpoulton.com/books/) — Nigel Poulton.** Updated yearly, best starting point.
 - 📕💰 **[Kubernetes Patterns, 2nd ed](https://www.oreilly.com/library/view/kubernetes-patterns-2nd/9781098131678/) — Ibryam & Huß.** The *design* book. Essential for interviews.
-- 🆓 **[KodeKloud CKA course](https://kodekloud.com/)** 💰 — browser labs, the fastest way to build real muscle memory. Worth the money.
+- 🎥💰 **[KodeKloud CKA course](https://kodekloud.com/)** — browser-based labs, the fastest way to build real muscle memory. Worth the money.
 - 📄🆓 [kubernetes.io — Concepts](https://kubernetes.io/docs/concepts/) — surprisingly good; read Workloads and Services sections
 - 🆓 [Kubernetes The Hard Way — Kelsey Hightower](https://github.com/kelseyhightower/kubernetes-the-hard-way) — **do this once.** Painful, clarifying.
 - 📄🆓 [Helm docs](https://helm.sh/docs/) · [Kustomize](https://kubectl.docs.kubernetes.io/references/kustomize/)

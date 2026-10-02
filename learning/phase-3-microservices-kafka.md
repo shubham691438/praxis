@@ -1,6 +1,6 @@
 # Phase 3 — Distributed Systems
 
-**5 weeks · ~60 hrs** · ⭐ **The most important phase in the project.** This is what senior
+**5 weeks · ~56 hrs** · ⭐ **The most important phase in the project.** This is what senior
 backend interviews are actually about. Do not rush it.
 
 > **Build at the end:** Split the monolith into `curriculum`, `identity`, `progress`,
@@ -50,7 +50,7 @@ backend interviews are actually about. Do not rush it.
 - 🆓 **[Confluent Developer](https://developer.confluent.io/courses/)** — free, excellent, hands-on courses. Do "Apache Kafka 101" and "Kafka Internals."
 - 📕🆓 **[Designing Event-Driven Systems](https://www.confluent.io/designing-event-driven-systems/) — Ben Stopford. Free.** Short and conceptually sharp.
 - 📄🆓 [Spring for Apache Kafka reference](https://docs.spring.io/spring-kafka/reference/)
-- 🎥🆓 [Confluent YouTube — Kafka Internals](https://www.youtube.com/@ConfluentIO)
+- 🎥🆓 [Confluent YouTube — Kafka Internals](https://www.youtube.com/@Confluent)
 
 **🧪 Lab:** Deliberately break ordering by using the wrong partition key. Observe out-of-order
 processing. Fix it. Then kill a consumer mid-batch and prove your consumer is idempotent by

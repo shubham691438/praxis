@@ -1,6 +1,6 @@
 # Phase 4 — Container Security & Sandboxed Execution
 
-**4 weeks · ~45 hrs** · ⭐⭐ The hardest and most distinctive piece. Running untrusted user code
+**4 weeks · ~40 hrs** · ⭐⭐ The hardest and most distinctive piece. Running untrusted user code
 safely is a real engineering problem almost no portfolio project attempts.
 
 > **Build at the end:** `lab` service — users submit Java/SQL/YAML; it executes in a locked-down
