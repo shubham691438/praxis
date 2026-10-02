@@ -23,11 +23,16 @@ You write Java at work, so this is about the parts most working devs never pick 
 - The memory model: `volatile`, happens-before, why double-checked locking was broken
 
 **Resources**
-- 📕🆓 [Modern Java in Action](https://www.manning.com/books/modern-java-in-action) — Ch. 1–7 for streams/lambdas. Skim if comfortable.
-- 📕💰 **[Effective Java, 3rd ed](https://www.oreilly.com/library/view/effective-java-3rd/9780134686097/) — Bloch.** Items 10–17 (object methods), 42–48 (lambdas/streams), 78–84 (concurrency). *The* Java book. Read these items slowly.
-- 🆓📄 [JEP 444 — Virtual Threads](https://openjdk.org/jeps/444) + [JEP 453 — Structured Concurrency](https://openjdk.org/jeps/453) — read the JEPs, not blog summaries
-- 🎥🆓 [Jose Paumard — JEP Café](https://www.youtube.com/@JosePaumard) — best Java deep-dives on YouTube
-- 📕💰 *Java Concurrency in Practice* — Goetz. Ch. 2–5, 10–11. Dated on APIs, perfect on reasoning.
+**Start here, in this order:**
+
+1. 🧪 **Do the lab below first.** Hit the wall before reading about the wall.
+2. 📄🆓 [JEP 444 — Virtual Threads](https://openjdk.org/jeps/444) + [JEP 453 — Structured Concurrency](https://openjdk.org/jeps/453) — read the JEPs themselves, not blog summaries. ~40 min.
+3. 📕💰 **[Effective Java, 3rd ed](https://www.oreilly.com/library/view/effective-java-3rd/9780134686097/) — Bloch.** Items 10–17 (object methods), 42–48 (lambdas/streams), 78–84 (concurrency). *The* Java book. Read these items slowly — one or two per sitting.
+4. 🎥🆓 [Jose Paumard — JEP Café](https://www.youtube.com/@JosePaumard) — best Java deep-dives on YouTube. Watch the virtual threads and structured concurrency episodes.
+5. 📕💰 *Java Concurrency in Practice* — Goetz. Ch. 2–5, 10–11. Dated on APIs, perfect on reasoning. Read if the memory-model checkpoint item feels shaky.
+
+**Optional / skip if comfortable:**
+- 📕💰 [Modern Java in Action](https://www.manning.com/books/modern-java-in-action) — Ch. 1–7 for streams/lambdas. **Paid, and dated** — it targets Java 8–11 and predates virtual threads entirely. You write Java daily; you almost certainly don't need it. Only pick it up if streams genuinely confuse you.
 
 **🧪 Lab:** Write a program that fetches 10,000 URLs. Do it three ways — platform thread pool,
 `CompletableFuture`, virtual threads. Measure. Explain the difference in your journal.
