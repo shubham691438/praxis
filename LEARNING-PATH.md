@@ -159,20 +159,52 @@ Spaced repetition algorithms, Bayesian knowledge tracing, CQRS read models.
 ## Running in parallel — system design
 
 System design is **not a phase**. It is a continuous track running underneath all of them,
-because it is the thing interviews actually test and it needs months of marination.
+because it is what interviews actually test and it needs months to marinate.
 
-**Read 📕 *Designing Data-Intensive Applications* (Kleppmann) at one chapter per week,
-start to finish, across the whole project.** It is the single highest-leverage book in backend
-engineering. Pair each chapter with the phase you're in — Ch. 5 (Replication) lands beautifully
-during Phase 3, Ch. 11 (Stream Processing) during Phase 6.
+### The sequence
 
-Supplement, from month 4 onward, 2 hrs/week:
-- 🆓 [Hello Interview — System Design](https://www.hellointerview.com/learn/system-design/in-a-hurry/introduction) — the best free structured prep available
-- 🆓 [ByteByteGo YouTube](https://www.youtube.com/@ByteByteGo) — short, visual, good for commute
-- 📕💰 *System Design Interview* Vol 1 & 2 — Alex Xu — breadth of worked examples
-- 🆓 [microservices.io patterns](https://microservices.io/patterns/index.html) — Chris Richardson's catalog; your reference for Phase 3
+**Weeks 1–4 — Alex Xu, *System Design Interview* Vol 1** (already owned)
 
----
+Read it alongside Phase 0. Phase 0 is Java/Maven/Docker — almost no cognitive overlap, so the
+two sit together comfortably.
+
+- **Ch. 1–5 are the foundational ones** (scale from zero to millions, rate limiter, consistent
+  hashing, key-value store, unique ID generator). The rest are case studies; read in any order.
+- **Read it actively.** For every chapter: spend 10 minutes designing the system yourself on
+  paper *before* reading his solution, then compare. **The gap between your design and his is
+  the learning.** Reading the solution cold teaches you almost nothing.
+- Log each one in `interview/README.md` under the system design track — specifically *where you
+  struggled*, not what the answer was.
+- Vol 2 is more worked examples. Skip for now; revisit before interview loops.
+
+> ⚠️ **"Complete it" is the wrong frame.** Alex Xu is a reference you revisit, not a book you
+> finish. Its weakness is that it gives you patterns without mechanisms — you can recite
+> "use consistent hashing" without knowing why it beats modulo hashing when a node dies.
+> That gap is exactly what a senior interviewer finds by asking "why?" twice. DDIA closes it.
+
+**Weeks 4–34 — 📕 *Designing Data-Intensive Applications* (Kleppmann), one chapter per week**
+
+The single highest-leverage book in backend engineering. Start after Alex Xu has given you the
+vocabulary, then run it start to finish underneath the whole project.
+
+Starting at week 4 is deliberate, not a delay — it puts the chapters where they'll land hardest:
+
+| DDIA chapters | ~Week | Lands during |
+|---|---|---|
+| Ch. 1–4 — Foundations, data models, encoding | 4–7 | Phase 1 (data modelling) |
+| **Ch. 5–6 — Replication, Partitioning** | 8–9 | Phase 1→3 transition |
+| **Ch. 7–9 — Transactions, Distributed Trouble, Consistency & Consensus** | 10–12 | **Phase 3 — exactly when you're fighting sagas, outbox and idempotency** |
+| Ch. 10–11 — Batch & Stream Processing | 13–15 | Phase 3 Kafka work |
+| Ch. 12 — The Future of Data Systems | 16 | Phase 5/8 |
+
+After Ch. 12, reread Ch. 7–9. They read completely differently the second time.
+
+### From month 4 onward — 2 hrs/week
+
+- 🆓 [Hello Interview — System Design](https://www.hellointerview.com/learn/system-design/in-a-hurry/introduction) — the best free structured prep available; stronger than Alex Xu on *how to run the interview itself*
+- 🆓 [ByteByteGo YouTube](https://www.youtube.com/@ByteByteGo) — Alex Xu's channel; short and visual, good for commutes
+- 🆓 [microservices.io patterns](https://microservices.io/patterns/index.html) — Chris Richardson's catalog; your Phase 3 reference
+- 🆓 [AWS Builders' Library](https://aws.amazon.com/builders-library/) — real distributed-systems writing by principal engineers. Underrated for system design prep.
 
 ## Weekly rhythm
 
