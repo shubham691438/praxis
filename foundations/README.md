@@ -75,6 +75,16 @@ mvn -q test -Dtest='Week01Test'
 
 ---
 
+## Reference
+
+**[docs/java-reference.md](docs/java-reference.md)** — a living reference that grows each week
+with what you've actually met. `final`, primitives vs references, integer division, `==` vs
+`.equals()`, access modifiers, `static`, and a table of common compile errors.
+
+Look things up there rather than asking me for syntax.
+
+---
+
 ## Weeks
 
 | Wk | Topic | Closes | Status |

@@ -16,20 +16,24 @@ package dev.praxis.foundations.week01;
 public final class Temperature {
 
     // TODO: declare a private final double field for celsius
+    final double celsiusTemperature
 
     public Temperature(double celsius) {
         // TODO: assign the field
+        celsiusTemperature=celsius;
         throw new UnsupportedOperationException("TODO: implement the constructor");
     }
 
     public double celsius() {
         // TODO: return the field
+        return celsiusTemperature;
         throw new UnsupportedOperationException("TODO: implement celsius()");
     }
 
     public double fahrenheit() {
         // TODO: convert. F = C * 9/5 + 32
         // Careful: 9/5 in Java is integer division and equals 1. Think about it.
+        double fahrenheitTemperature = celsiusTemperature * 9(double)/5+32;
         throw new UnsupportedOperationException("TODO: implement fahrenheit()");
     }
 
