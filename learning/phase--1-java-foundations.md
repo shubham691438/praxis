@@ -69,20 +69,39 @@ Two modes, use both:
 the platform and the part most people skip. A stranger telling you "this works, but here's what
 a Java developer would have written" is worth more than ten more exercises.
 
-### For reading — no tooling required
+Each concept carries a written **About** document before its exercises — the Exceptions one runs
+to roughly 7,000 words covering checked vs unchecked and the `Throwable` hierarchy properly. So
+Exercism is both the tutorial and the practice. You do not need a separate course.
 
-⭐ **[Java Programming MOOC — Helsinki](https://java-programming.mooc.fi/)** · 🆓 · **browser only**
+### How the 26 concepts map onto this phase
 
-Its written material is the best free structured Java text available, in English. **Read it in
-your browser as a book.** No account, no TMC, no NetBeans, no VS Code, no plugin.
+| Section | Exercism concepts | Covered? |
+|---|---|---|
+| 1 · Object semantics | Basics, Strings, Numbers, **Nullability**, Chars | ✅ fully |
+| 2 · Collections | **Lists, Maps, Sets**, Arrays, Enums | ✅ fully |
+| 3 · Exceptions | **Exceptions**, Nullability | ✅ fully |
+| 4 · OOP | Classes, **Constructors, Inheritance, Interfaces**, Method Overloading | ✅ fully |
+| 5 · Generics & streams | Generic Types | ⚠️ generics yes, **streams/Optional no** |
+| 6 · Concurrency | — | ❌ **not covered at all** |
 
-> ⚠️ **Skip every video — they're in Finnish**, and they only cover tooling you aren't using.
-> The occasional stray Finnish page (the 404, for one) is the site's translation gaps, not a
-> mistake on your part.
+The bolded concepts are your diagnostic's weak spots. Exercism hits every one of them.
 
-### Supporting
-- 🎥🆓 [Coding with John](https://www.youtube.com/@CodingWithJohn) — short English videos on exactly the gotchas you missed: `equals`/`hashCode`, string immutability, try-with-resources
-- 📄🆓 [dev.java/learn](https://dev.java/learn/) — Oracle's modern tutorials; reference, not curriculum
+### Filling the two gaps
+
+Exercism has no concurrency track and doesn't teach streams as a concept. For those two sections:
+
+- 📄🆓 **[dev.java — Streams](https://dev.java/learn/api/streams/)** and **[Concurrency](https://dev.java/learn/concurrency/)** — Oracle's own modern tutorials, English, genuinely good
+- 🎥🆓 [Coding with John](https://www.youtube.com/@CodingWithJohn) — his threads and streams videos
+- 🧪 The §6 lab (two threads, shared counter, fix it three ways) stands on its own — write it in IntelliJ, no platform needed
+
+### Optional backup reading
+
+[Java Programming MOOC — Helsinki](https://java-programming.mooc.fi/) · 🆓 · **browser only**
+
+If an Exercism concept doesn't click, its written material is excellent and free. Read it as a
+book in your browser — no account, no TMC, no plugin. **Optional, not required.**
+
+> ⚠️ Skip its videos — they're in Finnish. The written text is fully English.
 
 **Not yet:** *Effective Java* moves to Phase 0 — it assumes fluency you're building here.
 
