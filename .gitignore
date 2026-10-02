@@ -29,3 +29,6 @@ kafka-data/
 # Node (UI phases)
 node_modules/
 dist/
+
+# Maven build output
+foundations/target/
