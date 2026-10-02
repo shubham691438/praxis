@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+# Roll the week up: commits, journal entries, hours, and prompts for reflection.
+# Usage: ./bin/weekly
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+JOURNAL="$ROOT/journal"
+START_DATE="2026-10-02"
+TODAY="$(date +%Y-%m-%d)"
+
+week_num() {
+  local s t
+  s=$(date -j -f "%Y-%m-%d" "$START_DATE" "+%s" 2>/dev/null || date -d "$START_DATE" "+%s")
+  t=$(date -j -f "%Y-%m-%d" "$TODAY" "+%s" 2>/dev/null || date -d "$TODAY" "+%s")
+  printf "%02d" $(( ((t - s) / 86400) / 7 + 1 ))
+}
+WEEK="$(week_num)"
+FILE="$JOURNAL/$TODAY-week-$WEEK-rollup.md"
+
+COMMITS="$(git -C "$ROOT" log --since='7 days ago' --pretty='- `%h` %s' 2>/dev/null || true)"
+[[ -z "$COMMITS" ]] && COMMITS="_(none)_"
+COMMIT_COUNT="$(git -C "$ROOT" log --since='7 days ago' --oneline 2>/dev/null | wc -l | xargs)"
+ENTRIES="$(find "$JOURNAL" -name '*day*.md' -newermt '7 days ago' 2>/dev/null | sort | sed "s|$JOURNAL/|- |" || true)"
+[[ -z "$ENTRIES" ]] && ENTRIES="_(none — that's the real finding this week)_"
+STATS="$(git -C "$ROOT" diff --shortstat "@{7 days ago}" 2>/dev/null || echo "n/a")"
+
+cat > "$FILE" <<EOF
+# Week $WEEK — Rollup
+
+**Week ending:** $TODAY
+
+---
+
+## By the numbers
+
+- **Commits:** $COMMIT_COUNT
+- **Code churn:** $STATS
+- **Hours:** _fill in_
+- **DDIA chapter:** _which one_
+
+## Journal entries this week
+
+$ENTRIES
+
+## Commits
+
+$COMMITS
+
+---
+
+## Reflection
+
+### Biggest thing I understand now that I didn't last Sunday
+
+### What I got stuck on, and what unstuck it
+
+### Was I honest about the checkpoint, or did I start building early?
+
+### Interview stories banked this week
+
+<!-- #interview -->
+
+### Next week's one priority
+
+<!-- ONE thing. Not a list. -->
+EOF
+
+echo "Created $FILE"
+${EDITOR:-vi} "$FILE"

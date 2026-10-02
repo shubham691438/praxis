@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+# Create today's journal entry, pre-filled with git activity.
+# Usage: ./bin/log ["title"]
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+JOURNAL="$ROOT/journal"
+START_DATE="2026-10-02"
+TODAY="$(date +%Y-%m-%d)"
+
+# Day number since project start (portable across BSD/GNU date)
+day_num() {
+  local s t
+  s=$(date -j -f "%Y-%m-%d" "$START_DATE" "+%s" 2>/dev/null || date -d "$START_DATE" "+%s")
+  t=$(date -j -f "%Y-%m-%d" "$TODAY" "+%s" 2>/dev/null || date -d "$TODAY" "+%s")
+  printf "%03d" $(( (t - s) / 86400 ))
+}
+DAY="$(day_num)"
+
+TITLE="${1:-}"
+if [[ -z "$TITLE" ]]; then
+  read -rp "Title for day $DAY: " TITLE
+fi
+SLUG="$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-|-$//g')"
+[[ -z "$SLUG" ]] && SLUG="entry"
+
+FILE="$JOURNAL/$TODAY-day-$DAY-$SLUG.md"
+if [[ -e "$FILE" ]]; then
+  echo "Entry already exists: $FILE"
+  ${EDITOR:-vi} "$FILE"; exit 0
+fi
+
+# Current phase, read from README status table
+PHASE="$(grep -m1 '^| \*\*Current phase\*\*' "$ROOT/README.md" 2>/dev/null | sed -E 's/.*\| ([^|]+) \|.*/\1/' | xargs || echo "?")"
+
+# Commits made today
+COMMITS="$(git -C "$ROOT" log --since="midnight" --pretty='- `%h` %s' 2>/dev/null || true)"
+[[ -z "$COMMITS" ]] && COMMITS="_(none yet)_"
+
+sed -e "s/{{DAY}}/$DAY/g" \
+    -e "s/{{TITLE}}/$TITLE/g" \
+    -e "s/{{DATE}}/$TODAY/g" \
+    -e "s/{{PHASE}}/$PHASE/g" \
+    -e "s/{{TIME}}/_fill in_/g" \
+    "$JOURNAL/TEMPLATE.md" > "$FILE"
+
+# Inject commits (multi-line, so do it separately)
+python3 - "$FILE" "$COMMITS" <<'PY'
+import sys, pathlib
+f, commits = pathlib.Path(sys.argv[1]), sys.argv[2]
+f.write_text(f.read_text().replace("{{COMMITS}}", commits))
+PY
+
+echo "Created $FILE"
+${EDITOR:-vi} "$FILE"
