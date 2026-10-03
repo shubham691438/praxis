@@ -1,4 +1,4 @@
-package dev.praxis.foundations.week01;
+package dev.praxis.foundations.day01;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * Every test fails until you implement the corresponding method.
  * Work top to bottom. Do not skip ahead.
  */
-class Week01Test {
+class Day01Test {
 
     @Nested
     @DisplayName("1. Temperature — immutability")

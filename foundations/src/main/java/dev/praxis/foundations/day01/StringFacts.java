@@ -1,4 +1,4 @@
-package dev.praxis.foundations.week01;
+package dev.praxis.foundations.day01;
 
 /**
  * EXERCISE 2 — String immutability and the string pool

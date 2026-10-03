@@ -1,4 +1,4 @@
-package dev.praxis.foundations.week01;
+package dev.praxis.foundations.day01;
 
 /**
  * EXERCISE 1 — Immutability
@@ -16,7 +16,7 @@ package dev.praxis.foundations.week01;
 public final class Temperature {
 
     // TODO: declare a private final double field for celsius
-    private double celsiusTemperature;
+    private final double celsiusTemperature;
 
     public Temperature(double celsius) {
         // TODO: assign the field

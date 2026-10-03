@@ -1,4 +1,4 @@
-package dev.praxis.foundations.week01;
+package dev.praxis.foundations.day01;
 
 import java.util.ArrayList;
 import java.util.List;

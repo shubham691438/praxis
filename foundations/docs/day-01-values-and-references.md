@@ -1,12 +1,12 @@
-# Week 1 — Values, References & Identity
+# Day 1 — Values, References & Identity
 
 **~12 hrs** · Closes diagnostic **Q1, Q2, Q3, Q4**
 
 > Read a section, then do its exercise. Don't read the whole thing first.
 
-**Files** — [`Temperature`](../src/main/java/dev/praxis/foundations/week01/Temperature.java) · [`StringFacts`](../src/main/java/dev/praxis/foundations/week01/StringFacts.java) ·
-[`BoxedNumbers`](../src/main/java/dev/praxis/foundations/week01/BoxedNumbers.java) · [`References`](../src/main/java/dev/praxis/foundations/week01/References.java) ·
-[`Money`](../src/main/java/dev/praxis/foundations/week01/Money.java) · [tests](../src/test/java/dev/praxis/foundations/week01/Week01Test.java)
+**Files** — [`Temperature`](../src/main/java/dev/praxis/foundations/day01/Temperature.java) · [`StringFacts`](../src/main/java/dev/praxis/foundations/day01/StringFacts.java) ·
+[`BoxedNumbers`](../src/main/java/dev/praxis/foundations/day01/BoxedNumbers.java) · [`References`](../src/main/java/dev/praxis/foundations/day01/References.java) ·
+[`Money`](../src/main/java/dev/praxis/foundations/day01/Money.java) · [tests](../src/test/java/dev/praxis/foundations/day01/Day01Test.java)
 
 Run `./check` from `foundations/` at any point to see where you are.
 
@@ -91,9 +91,9 @@ method returns a new String.**
 Why bother? Immutable objects are safe to share — across methods, across threads, as Map keys —
 because nobody can change them behind your back. You'll build two immutable classes this week.
 
-> 🔨 **Exercise 1: [`Temperature.java`](../src/main/java/dev/praxis/foundations/week01/Temperature.java)** · 🔨 **Exercise 2: [`StringFacts.java`](../src/main/java/dev/praxis/foundations/week01/StringFacts.java)**
+> 🔨 **Exercise 1: [`Temperature.java`](../src/main/java/dev/praxis/foundations/day01/Temperature.java)** · 🔨 **Exercise 2: [`StringFacts.java`](../src/main/java/dev/praxis/foundations/day01/StringFacts.java)**
 >
-> Tests: [`Week01Test`](../src/test/java/dev/praxis/foundations/week01/Week01Test.java) → `TemperatureTest`, `StringFactsTest`
+> Tests: [`Day01Test`](../src/test/java/dev/praxis/foundations/day01/Day01Test.java) → `TemperatureTest`, `StringFactsTest`
 
 ---
 
@@ -145,9 +145,9 @@ c == d         // false — outside the cache, two objects
 Find the exact boundary yourself in Exercise 3. Don't look it up — the point is that you *saw*
 it flip.
 
-> 🔨 **Exercise 3: [`BoxedNumbers.java`](../src/main/java/dev/praxis/foundations/week01/BoxedNumbers.java)**
+> 🔨 **Exercise 3: [`BoxedNumbers.java`](../src/main/java/dev/praxis/foundations/day01/BoxedNumbers.java)**
 >
-> Tests: [`Week01Test`](../src/test/java/dev/praxis/foundations/week01/Week01Test.java) → `BoxedNumbersTest`
+> Tests: [`Day01Test`](../src/test/java/dev/praxis/foundations/day01/Day01Test.java) → `BoxedNumbersTest`
 
 ---
 
@@ -180,9 +180,9 @@ void reassign(List<String> items) {
 A method can **change what an object contains**. It can never **change which object the
 caller's variable points at.** That one sentence is Q4.
 
-> 🔨 **Exercise 4: [`References.java`](../src/main/java/dev/praxis/foundations/week01/References.java)**
+> 🔨 **Exercise 4: [`References.java`](../src/main/java/dev/praxis/foundations/day01/References.java)**
 >
-> Tests: [`Week01Test`](../src/test/java/dev/praxis/foundations/week01/Week01Test.java) → `ReferencesTest`
+> Tests: [`Day01Test`](../src/test/java/dev/praxis/foundations/day01/Day01Test.java) → `ReferencesTest`
 
 ---
 
@@ -205,20 +205,20 @@ new BigDecimal(0.1)     // 0.1000000000000000055511151231257827... — you impor
 One more trap, which catches experienced developers: `BigDecimal.equals()` considers *scale*,
 so `10.5` and `10.50` are **not** equal by it. Use `compareTo(other) == 0` for value equality.
 
-> 🔨 **Exercise 5: [`Money.java`](../src/main/java/dev/praxis/foundations/week01/Money.java)**
+> 🔨 **Exercise 5: [`Money.java`](../src/main/java/dev/praxis/foundations/day01/Money.java)**
 >
-> Tests: [`Week01Test`](../src/test/java/dev/praxis/foundations/week01/Week01Test.java) → `MoneyTest`
+> Tests: [`Day01Test`](../src/test/java/dev/praxis/foundations/day01/Day01Test.java) → `MoneyTest`
 
 ---
 
-## ✅ Week 1 done when
+## ✅ Day 1 done when
 
-- [ ] `mvn -q test` is green — all 22 tests
-- [ ] You can draw the box-and-arrow picture for mutate vs reassign from memory
-- [ ] You can say why `s.toUpperCase()` alone does nothing, in one sentence
-- [ ] You found the Integer cache boundary **by experiment**, not by looking it up
-- [ ] You can explain why `==` on strings sometimes works, and why that's worse than never
-- [ ] You wrote every line yourself, with AI completion off
+- [x] `mvn -q test` is green — all 22 tests
+- [x] You can draw the box-and-arrow picture for mutate vs reassign from memory
+- [x] You can say why `s.toUpperCase()` alone does nothing, in one sentence
+- [x] You found the Integer cache boundary **by experiment**, not by looking it up
+- [x] You can explain why `==` on strings sometimes works, and why that's worse than never
+- [x] You wrote every line yourself, with AI completion off
 
 Then: `cd ~/Downloads/praxis && ./bin/log "week 1 — values and references"`
 

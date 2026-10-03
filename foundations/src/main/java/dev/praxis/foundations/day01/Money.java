@@ -1,4 +1,4 @@
-package dev.praxis.foundations.week01;
+package dev.praxis.foundations.day01;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -30,18 +30,18 @@ public final class Money {
 
     /** Returns a NEW Money. Must not modify this one. */
     public Money plus(Money other) {
-        return new Money(this.amount+other)l
+        return new Money(this.amount.add(other.amount));
     }
 
     /** Returns a NEW Money. Must not modify this one. */
     public Money minus(Money other) {
-        throw new UnsupportedOperationException("TODO: implement minus()");
+        return new Money(this.amount.subtract(other.amount));
     }
 
     /** Always exactly 2 decimal places, HALF_UP. e.g. "10.50" */
     @Override
     public String toString() {
-        throw new UnsupportedOperationException("TODO: implement toString()");
+        return this.amount.setScale(2,RoundingMode.HALF_UP).toString();
     }
 
     /**
@@ -52,13 +52,16 @@ public final class Money {
      */
     @Override
     public boolean equals(Object o) {
-        throw new UnsupportedOperationException("TODO: implement equals()");
+        if(this==o) return true;
+
+        if(! ( o instanceof Money)) return false;
+
+        Money other = (Money)o;
+        return this.amount.compareTo(other.amount)==0;
     }
 
     @Override
     public int hashCode() {
-        // Must be consistent with equals(). Week 2 covers the full contract —
-        // for now, derive it from the amount stripped of trailing zeros.
-        throw new UnsupportedOperationException("TODO: implement hashCode()");
+       return this.amount.stripTrailingZeros().intValue();
     }
 }

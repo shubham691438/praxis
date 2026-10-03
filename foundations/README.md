@@ -9,14 +9,14 @@ No account, no platform, no CLI, no second editor. A Maven project and a test su
 ## The loop
 
 ```
-read docs/week-NN-*.md  →  implement the stubs  →  mvn test  →  green  →  journal
+read docs/day-NN-*.md  →  implement the stubs  →  mvn test  →  green  →  journal
 ```
 
-1. Read the week's lesson, section by section
+1. Read the day's lesson, section by section
 2. Each section ends with 🔨 — go do that exercise before reading on
 3. Replace every `throw new UnsupportedOperationException("TODO: ...")` with real code
 4. `mvn -q test` until green
-5. Log it: `cd .. && ./bin/log "week N — topic"`
+5. Log it: `cd .. && ./bin/log "day N — topic"`
 
 ---
 
@@ -42,16 +42,16 @@ cd ~/Downloads/praxis/foundations
           TODO: implement the constructor
 ```
 
-It tells you how far you are and which exercise is next, in lesson order. One week only:
+It tells you how far you are and which exercise is next, in lesson order. One day only:
 `./check 01`. Raw Maven output if you want it: `mvn test`.
 
 In IntelliJ: open the `foundations` folder, let it import the Maven project, then click the
-green arrow next to `Week01Test`. The debugger is right there — use it.
+green arrow next to `Day01Test`. The debugger is right there — use it.
 
-Run a single week:
+Run a single day:
 
 ```bash
-mvn -q test -Dtest='Week01Test'
+mvn -q test -Dtest='Day01Test'
 ```
 
 ---
@@ -85,22 +85,9 @@ Look things up there rather than asking me for syntax.
 
 ---
 
-## Weeks
+## Days
 
-| Wk | Topic | Closes | Status |
-|---|---|---|---|
-| [01](docs/week-01-values-and-references.md) | Values, references & identity | Q1, Q2, Q3, Q4 | 📝 ready |
-| 02 | `equals` & `hashCode` — the contract | Q6, Q10 | — |
-| 03 | Collections I — List, Set | Q10, Q11 | — |
-| 04 | Collections II — Map, nulls, iteration | Q12 | — |
-| 05 | Exceptions & resources | Q13, Q14 | — |
-| 06 | Classes, constructors, init order | Q7 | — |
-| 07 | Inheritance, polymorphism, casting | Q8 | — |
-| 08 | Interfaces, generics, composition | — | — |
-| 09 | Streams, Optional, lambdas | — | — |
-| 10 | Concurrency + capstone | Q15 | — |
-
-Each week is written when you reach it, so it can adapt to how the previous one went.
+Each day is written when you reach it, so it adapts to how the previous one went — the content, the pacing and the emphasis all shift based on where you actually struggled.
 
 ---
 
