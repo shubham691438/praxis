@@ -1,5 +1,6 @@
 package dev.praxis.foundations.week01;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,7 +17,7 @@ public final class References {
 
     /** Add `item` to the caller's list. The caller MUST see this. */
     public static void addTo(List<String> list, String item) {
-        throw new UnsupportedOperationException("TODO: implement addTo()");
+        list.add(item);
     }
 
     /**
@@ -26,7 +27,8 @@ public final class References {
      * Write it the obvious way. The test asserts the caller is unaffected.
      */
     public static void replaceWith(List<String> list, String item) {
-        throw new UnsupportedOperationException("TODO: implement replaceWith()");
+        List<String> lists = new ArrayList<>();
+        lists.add(item);
     }
 
     /**
@@ -36,6 +38,6 @@ public final class References {
      * Think before you answer. Then write a scratch main() and prove it.
      */
     public static boolean canSwapPrimitivesViaMethod() {
-        throw new UnsupportedOperationException("TODO: decide, prove it, then implement");
+        return false;
     }
 }

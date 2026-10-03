@@ -176,6 +176,54 @@ Both make `==` work in tests and fail in production. **Always `.equals()` for ob
 Default to `private` for fields, `public` only for what callers genuinely need. A public field
 is part of your API forever; behind a getter you can change the representation later.
 
+### `private` is per CLASS, not per OBJECT
+
+This surprises nearly everyone. A method can read the private fields of **any** instance of its
+own class, not just `this`:
+
+```java
+public final class Money {
+    private final BigDecimal amount;
+
+    public Money plus(Money other) {
+        return new Money(this.amount.add(other.amount));
+        //                              ^^^^^^^^^^^^^ legal — we are inside Money
+    }
+}
+```
+
+`private` means "visible inside this class", and `plus` is inside `Money`. Code *outside*
+`Money` still cannot touch `other.amount`.
+
+**Why:** privacy protects a class's invariants from outside code. Inside the class you are the
+author — you already know the representation and are responsible for keeping it valid, so there
+is nothing to protect you from.
+
+**Where you'll see it:** every `equals()`, `compareTo()` and copy constructor in the JDK.
+
+```java
+// Integer.equals
+public boolean equals(Object obj) {
+    if (obj instanceof Integer) {
+        return value == ((Integer)obj).value;   // other's private field
+    }
+    return false;
+}
+```
+
+Without this rule you would need a public getter on every field just to compare two objects —
+destroying encapsulation in order to serve it. Nested classes get the same access: an inner
+class and its outer class can see each other's private members.
+
+### Getters are not automatic
+
+Add a getter when a caller has a real need, not reflexively. `Temperature` has `celsius()`
+because callers want the number. `Money` has none — callers want `plus`, `minus`, `equals`,
+`toString`. Exposing the raw `BigDecimal` would let someone do unrounded arithmetic on it,
+which is the exact thing the class exists to prevent.
+
+**Expose behaviour, not data.**
+
 ---
 
 ## `static`

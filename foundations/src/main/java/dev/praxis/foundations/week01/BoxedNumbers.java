@@ -14,10 +14,10 @@ public final class BoxedNumbers {
 
     /** Box `value` twice into Integer and return whether `==` says they are the same object. */
     public static boolean sameObjectWhenBoxed(int value) {
-        // Integer a = value;
-        // Integer b = value;
-        // return a == b;
-        throw new UnsupportedOperationException("TODO: implement sameObjectWhenBoxed()");
+         Integer a = value;
+         Integer b = value;
+         return a == b;
+
     }
 
     /**
@@ -25,13 +25,13 @@ public final class BoxedNumbers {
      * Find it by experiment — write a loop in a scratch main() and print where it flips.
      */
     public static int highestCachedValue() {
-        throw new UnsupportedOperationException("TODO: find this by experiment, then return it");
+        return 127;
     }
 
     /**
      * Return the LOWEST int value for which sameObjectWhenBoxed() returns true.
      */
     public static int lowestCachedValue() {
-        throw new UnsupportedOperationException("TODO: find this by experiment, then return it");
+        return -128;
     }
 }

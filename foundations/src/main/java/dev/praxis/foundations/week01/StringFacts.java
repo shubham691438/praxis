@@ -15,7 +15,7 @@ public final class StringFacts {
      * WITHOUT modifying the original (you can't — that's the lesson).
      */
     public static String shout(String input) {
-        throw new UnsupportedOperationException("TODO: implement shout()");
+        return input.toUpperCase();
     }
 
     /**
@@ -25,10 +25,10 @@ public final class StringFacts {
      * Write it, run it, see the answer. Don't reason it out from memory.
      */
     public static boolean literalsAreSameObject() {
-        // String a = "hello";
-        // String b = "hello";
-        // return a == b;
-        throw new UnsupportedOperationException("TODO: implement literalsAreSameObject()");
+        String a = "hello";
+        String b = "hello";
+        return a == b;
+
     }
 
     /**
@@ -36,7 +36,10 @@ public final class StringFacts {
      * Return whether `==` considers them the same object.
      */
     public static boolean literalAndNewAreSameObject() {
-        throw new UnsupportedOperationException("TODO: implement literalAndNewAreSameObject()");
+        String a="Hello";
+        String b= new String("Hello");
+
+        return a==b;
     }
 
     /**
@@ -44,6 +47,8 @@ public final class StringFacts {
      * Return the result.
      */
     public static boolean literalAndNewAreEqual() {
-        throw new UnsupportedOperationException("TODO: implement literalAndNewAreEqual()");
+        String a="Hello";
+        String b= new String("Hello");
+        return a.equals(b);
     }
 }

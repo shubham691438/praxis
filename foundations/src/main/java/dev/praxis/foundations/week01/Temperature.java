@@ -16,7 +16,7 @@ package dev.praxis.foundations.week01;
 public final class Temperature {
 
     // TODO: declare a private final double field for celsius
-    final double celsiusTemperature;
+    private double celsiusTemperature;
 
     public Temperature(double celsius) {
         // TODO: assign the field
@@ -38,11 +38,13 @@ public final class Temperature {
 
     /** Returns a NEW Temperature, `degrees` warmer. Must not modify this one. */
     public Temperature warmer(double degrees) {
-
+         Temperature warmedTemperature = new Temperature(degrees+celsiusTemperature);
+        return warmedTemperature;
     }
 
     /** Returns a NEW Temperature, `degrees` cooler. Must not modify this one. */
     public Temperature cooler(double degrees) {
-
+        Temperature cooledTemperature= new Temperature(celsiusTemperature-degrees);
+        return cooledTemperature;
     }
 }

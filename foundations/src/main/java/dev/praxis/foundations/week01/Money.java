@@ -17,19 +17,20 @@ import java.math.RoundingMode;
 public final class Money {
 
     // TODO: private final BigDecimal amount;
+    private final BigDecimal amount;
 
     /** Construct from a decimal string, e.g. "10.50". Never from a double. */
     public Money(String amount) {
-        throw new UnsupportedOperationException("TODO: implement the constructor");
+        this.amount = new BigDecimal(amount);
     }
 
     private Money(BigDecimal amount) {
-        throw new UnsupportedOperationException("TODO: implement the private constructor");
+      this.amount=amount;
     }
 
     /** Returns a NEW Money. Must not modify this one. */
     public Money plus(Money other) {
-        throw new UnsupportedOperationException("TODO: implement plus()");
+        return new Money(this.amount+other)l
     }
 
     /** Returns a NEW Money. Must not modify this one. */
