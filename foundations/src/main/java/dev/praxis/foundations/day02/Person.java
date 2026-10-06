@@ -1,4 +1,5 @@
 package dev.praxis.foundations.day02;
+import java.util.Objects;
 
 /**
  * EXERCISE 1 — equals and hashCode, properly
@@ -35,7 +36,13 @@ public final class Person {
      */
     @Override
     public boolean equals(Object o) {
-        throw new UnsupportedOperationException("TODO: implement equals()");
+        if(this==o) return true;
+
+        if(!(o instanceof Person) ) return false;
+
+        Person other = (Person)o;
+        if(Objects.equals(this.name,other.name) && this.age==other.age) return true;
+        return false;
     }
 
     /**
@@ -50,12 +57,13 @@ public final class Person {
      */
     @Override
     public int hashCode() {
-        throw new UnsupportedOperationException("TODO: implement hashCode()");
+        return Objects.hash(this.name,this.age);
     }
 
     /** Format: "Ada (36)". A null name renders as "unknown". */
     @Override
     public String toString() {
-        throw new UnsupportedOperationException("TODO: implement toString()");
+        String display = (this.name==null) ? "unknown":name;
+         return display+" ("+this.age+")";
     }
 }

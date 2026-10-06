@@ -15,9 +15,9 @@ package dev.praxis.foundations.day02;
 public final class Counter {
 
     /** TODO: a static int, shared by every Counter, counting how many exist. */
-
+    static int count=0;
     /** TODO: an instance int — each Counter's own serial number, 1-based. */
-
+     int serialNumber;
     /**
      * Each new Counter should:
      *   - increment the shared total
@@ -26,12 +26,13 @@ public final class Counter {
      * So the first Counter ever created is #1, the second is #2, and so on.
      */
     public Counter() {
-        throw new UnsupportedOperationException("TODO: implement the constructor");
+        count+=1;
+        this.serialNumber=count;
     }
 
     /** This object's own serial number. */
     public int serialNumber() {
-        throw new UnsupportedOperationException("TODO: implement serialNumber()");
+        return this.serialNumber;
     }
 
     /**
@@ -41,11 +42,11 @@ public final class Counter {
      * It has no `this`, so it can only read static state.
      */
     public static int totalCreated() {
-        throw new UnsupportedOperationException("TODO: implement totalCreated()");
+        return count;
     }
 
     /** Reset the shared total to zero. The tests need this to stay independent. */
     public static void reset() {
-        throw new UnsupportedOperationException("TODO: implement reset()");
+        count=0;
     }
 }

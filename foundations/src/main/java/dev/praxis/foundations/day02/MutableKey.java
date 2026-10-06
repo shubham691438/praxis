@@ -45,7 +45,10 @@ public final class MutableKey {
      * Return what get() gives back. This one behaves normally.
      */
     public static String lookupWithoutMutation() {
-        throw new UnsupportedOperationException("TODO: implement lookupWithoutMutation()");
+        Map<Tag,String> map = new HashMap<>();
+        Tag key = new Tag("a");
+        map.put(key,"value");
+        return map.get(key);
     }
 
     /**
@@ -59,7 +62,11 @@ public final class MutableKey {
      * Predict the answer. Then run it.
      */
     public static String lookupAfterMutatingKey() {
-        throw new UnsupportedOperationException("TODO: implement lookupAfterMutatingKey()");
+        Map<Tag,String> map = new HashMap<>();
+        Tag key= new Tag("a");
+        map.put(key,"value");
+        key.setLabel("b");
+        return map.get(key);
     }
 
     /**
@@ -71,6 +78,10 @@ public final class MutableKey {
      * memory leak with extra steps.
      */
     public static int mapSizeAfterMutatingKey() {
-        throw new UnsupportedOperationException("TODO: implement mapSizeAfterMutatingKey()");
+        Map<Tag,String> map = new HashMap<>();
+        Tag key= new Tag("a");
+        map.put(key,"value");
+        key.setLabel("b");
+        return map.size();
     }
 }

@@ -45,7 +45,9 @@ public final class BrokenHash {
      * Predict the answer before you run it. Then run it.
      */
     public static boolean hashSetFindsEqualId() {
-        throw new UnsupportedOperationException("TODO: implement hashSetFindsEqualId()");
+       Set<Id> set= new HashSet<>();
+       set.add(new Id("a"));
+       return set.contains(new Id("a"));
     }
 
     /**
@@ -59,7 +61,10 @@ public final class BrokenHash {
      * When you see why, you understand what hashCode is for.
      */
     public static boolean arrayListFindsEqualId() {
-        throw new UnsupportedOperationException("TODO: implement arrayListFindsEqualId()");
+       List<Id> list = new ArrayList<>();
+       list.add(new Id("a"));
+
+       return list.contains(new Id("a"));
     }
 
     /**
@@ -68,6 +73,10 @@ public final class BrokenHash {
      * A Set is supposed to hold no duplicates. Does it manage that here?
      */
     public static int hashSetSizeAfterAddingTwoEqualIds() {
-        throw new UnsupportedOperationException("TODO: implement hashSetSizeAfterAddingTwoEqualIds()");
+       Set<Id> set= new HashSet<>();
+       set.add(new Id("a"));
+       set.add(new Id("a"));
+
+       return set.size();
     }
 }

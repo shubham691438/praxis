@@ -193,13 +193,13 @@ right there).
 
 ## ✅ Day 2 done when
 
-- [ ] `./check 02` is green — all 24
-- [ ] You can state all five `equals` rules
-- [ ] You can draw the bucket diagram and explain why a missing `hashCode` loses objects
-- [ ] You can explain why `HashSet` failed but `ArrayList` worked in Exercise 2
-- [ ] You can explain why a mutated key strands its entry
-- [ ] You can say when to use `static` and when not to
-- [ ] You wrote every line yourself, with AI completion off
+- [x] `./check 02` is green — all 24
+- [x] You can state all five `equals` rules
+- [x] You can draw the bucket diagram and explain why a missing `hashCode` loses objects
+- [x] You can explain why `HashSet` failed but `ArrayList` worked in Exercise 2
+- [x] You can explain why a mutated key strands its entry
+- [x] You can say when to use `static` and when not to
+- [x] You wrote every line yourself, with AI completion off
 
 Then: `cd ~/Downloads/praxis && ./bin/log "day 2 — equality and hashing"`
 
@@ -210,8 +210,8 @@ strong interview answers.
 
 ## 💬 Interview questions this closes
 
-- *"What's the contract between equals and hashCode?"*
+- *"What's the contract between equals and hashCode?"* If equal then hascode should be same
 - *"What happens if you override equals but not hashCode?"* ← you'll have seen it
-- *"How does HashMap work internally?"*
-- *"Why shouldn't you use a mutable object as a map key?"*
-- *"When would you use a static method?"*
+- *"How does HashMap work internally?"* yes
+- *"Why shouldn't you use a mutable object as a map key?"* yes
+- *"When would you use a static method?"* yes

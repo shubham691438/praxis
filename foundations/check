@@ -30,11 +30,13 @@ import glob, re
 from collections import OrderedDict
 
 WEEKS = {"01": "Values, References & Identity",
-         "02": "Equality, Hashing & the Object Contract"}
+         "02": "Equality, Hashing & the Object Contract",
+         "03": "Collections — List, Set, Map"}
 
 # lesson order, not alphabetical — "Next" must point at the right exercise
 ORDER = {"01": ["Temperature", "StringFacts", "BoxedNumbers", "References", "Money"],
-         "02": ["Person", "BrokenHash", "MutableKey", "Counter"]}
+         "02": ["Person", "BrokenHash", "MutableKey", "Counter"],
+         "03": ["ListOps", "MapOps", "SetOps", "Inventory"]}
 
 files = sorted(glob.glob("target/surefire-reports/TEST-*.xml"))
 if not files:
