@@ -43,6 +43,103 @@ learned. **Specific numbers beat adjectives every time.**
 Filled in per phase, from each phase file's "Interview questions this phase answers" section.
 Format: **question → 3-line answer → the one gotcha.**
 
+### Phase -1 — Java Foundations
+
+#### Day 1 — Values, references & identity
+
+**Q: What's the difference between `==` and `.equals()`?**
+`==` compares addresses — are these the same object? `.equals()` compares contents. For
+primitives `==` is correct; for objects it's almost never what you want.
+> **Gotcha:** `==` *sometimes* works on Strings, because identical literals are interned into
+> one pooled object. That's worse than never working — it passes tests with literals and fails
+> in production with values from a database or an HTTP request, which are never pooled.
+
+**Q: `Integer a = 127, b = 127; a == b`?**
+`true`. Java caches boxed Integers from −128 to 127, so both reference the same cached object.
+At 128 it's `false` — outside the cache, two separate objects.
+> **Gotcha:** the same applies to `Short`, `Long`, `Byte` (−128..127) and `Character` (0..127).
+> `Float` and `Double` have no cache at all. Every cached type is immutable — that's the
+> precondition, since sharing a mutable object would let one holder corrupt another's value.
+
+**Q: Why doesn't `s.toUpperCase()` change `s`?**
+Strings are immutable. The method builds a *new* String and returns it; ignoring the return
+value discards the result. You need `s = s.toUpperCase()`.
+> **Gotcha:** the same pattern covers `BigDecimal.add()`, `LocalDate.plusDays()` and every
+> immutable type. If ignoring the return value makes a call pointless, the type is immutable.
+> `StringBuilder.append()` is the exception — it mutates *and* returns `this` for chaining.
+
+**Q: Is Java pass-by-value or pass-by-reference?**
+Always pass-by-value. What confuses people is that the value of a reference variable is an
+address, so a copy of it still points at the same object.
+> **Gotcha:** a method can change what an object *contains* (caller sees it) but never which
+> object the caller's variable *points at* (caller sees nothing). Which is why you cannot write
+> a `swap(int, int)` method in Java.
+
+**Q: Why not use `double` for money?**
+`double` is binary floating point; 0.1 has no exact binary representation. `0.1 + 0.2` gives
+`0.30000000000000004`, and the error compounds. Use `BigDecimal`, constructed from a `String`.
+> **Gotcha:** `new BigDecimal(0.1)` imports the very error you're escaping — pass a String.
+> And `BigDecimal.equals()` compares *scale*, so `10.5` and `10.50` are not equal by it.
+> Use `compareTo(x) == 0`.
+
+**Q: What does `final` mean?**
+Cannot be reassigned. On a field, set once; on a method, cannot be overridden; on a class,
+cannot be extended.
+> **Gotcha:** it does **not** make an object immutable. `final List l = new ArrayList<>()`
+> still permits `l.add(x)`. It freezes the reference, not the object.
+
+---
+
+#### Day 2 — Equality, hashing & the object contract
+
+**Q: What's the contract between `equals` and `hashCode`?**
+If two objects are equal, they must return the same hash code. The reverse isn't required —
+unequal objects may share one, which is a collision and is normal.
+> **Gotcha:** collisions are mathematically unavoidable — `hashCode` returns an `int` (~4.3
+> billion values) and there are unlimited possible objects. `"Aa"` and `"BB"` both hash to 2112.
+> Collisions cost speed; a broken contract costs correctness.
+
+**Q: What happens if you override `equals` but not `hashCode`?**
+The object becomes invisible to hash-based collections. `HashSet.contains()` hashes to one
+bucket, the object is in another, and **`equals` is never called**. A `Set` will hold
+duplicates; a `HashMap` will lose keys.
+> **Gotcha:** `equals` isn't broken — it's correct. The *inherited* `hashCode` contradicts it.
+> The proof: an `ArrayList` finds the same object fine, because a List only ever calls `equals`.
+> Nothing enforces the contract — no compiler warning, no exception. It just silently misbehaves.
+
+**Q: How does `HashMap` work internally?**
+An array of buckets. `hashCode()` picks the bucket, then `equals()` finds the entry within it —
+two-stage lookup. Collisions chain as a linked list, and convert to a red-black tree past 8
+entries in one bucket. Load factor 0.75: at 12 of 16 slots it doubles and rehashes everything.
+> **Gotcha:** the hash is scrambled first — `h ^ (h >>> 16)`. The bucket index is `(n-1) & hash`,
+> which only reads the low bits, so the high bits are mixed down to make them count. And
+> `HashSet` is literally a `HashMap` whose values are all one shared dummy object.
+
+**Q: Why shouldn't a mutable object be a `HashMap` key?**
+An entry is filed by its hash at insertion time. Mutate the key and its hash changes, but the
+entry doesn't move. `get()` with the *identical object* then returns null.
+> **Gotcha:** the entry isn't removed — `size()` still counts it and iteration still finds it.
+> It's unreachable by `get()` forever. A memory leak no profiler flags. This is why `String`,
+> `Integer` and `LocalDate` — the usual key types — are all immutable.
+
+**Q: `static` vs instance?**
+A `static` member belongs to the class — one copy shared by everything. An instance member
+belongs to each object. A `static` method has no `this`, so it can't touch instance state.
+> **Gotcha:** this is why `toString()` takes no parameters (instance method — the object is the
+> implicit `this`) while `Objects.equals(a, b)` takes two (static — no object to read from).
+
+**Q: Why is the parameter of `equals` `Object` rather than your own type?**
+Because it overrides `Object.equals(Object)`, and an override must match the signature exactly.
+> **Gotcha:** writing `equals(Person o)` compiles but creates an *overload*, not an override.
+> `@Override` would error, and `HashMap` and `List.contains()` would never call it. Silent bug.
+
+**Q: Why cast after `instanceof` has already proved the type?**
+The compiler tracks declared types, not runtime facts. `o` is declared `Object`, so `o.field`
+won't compile regardless of what `instanceof` established.
+> **Gotcha:** a cast converts nothing — the object was always that type. It only changes what
+> the compiler permits. Java 16+ pattern matching (`o instanceof Money m`) binds the variable
+> and removes the separate cast.
+
 ### Phase 0 — Foundations
 _pending_
 
